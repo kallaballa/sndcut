@@ -44,8 +44,8 @@ private:
     format svgtag(
         string("<svg xmlns:dc=\"http://purl.org/dc/elements/1.1/\" ") + "xmlns:cc=\"http://creativecommons.org/ns#\" "
             + "xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" " + "xmlns:svg=\"http://www.w3.org/2000/svg\" "
-            + "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " + "xmlns=\"http://www.w3.org/2000/svg\" " + "width=\"%fmm\" " + "height=\"%fmm\" "
-            + "resolution=\"%f\" " + "version=\"1.1\" " + "viewbox=\"0mm 0mm %fmm %fmm\" >");
+            + "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " + "xmlns=\"http://www.w3.org/2000/svg\" " + "width=\"%f\" " + "height=\"%f\" "
+            + "resolution=\"%f\" " + "version=\"1.1\" " + "viewbox=\"0 0 %f %f\" >");
 
     string metadata = string("<metadata id=\"ccmetadata\">") + "<rdf:RDF>" + "<cc:Work rdf:about=\"\">" + "<dc:format>image/svg+xml</dc:format>"
         + "<dc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" />" + "<dc:title></dc:title>" + "</cc:Work>" + "</rdf:RDF>" + "</metadata>";
@@ -71,7 +71,7 @@ public:
   }
 
   void drawCircle(double cx, double cy, double r) {
-    ostream_ << "<circle fill='none' stroke='#00ff00' stroke-width='" << strokeWidth_ << "mm' cx='" << cx << "mm' cy='" << cy << "mm' r='" << r << "mm'/>" << std::endl;
+    ostream_ << "<circle fill='none' stroke='#00ff00' stroke-width='" << strokeWidth_ << "' cx='" << cx << "' cy='" << cy << "' r='" << r << "'/>" << std::endl;
   }
 
   void startLayer() {
@@ -83,11 +83,11 @@ public:
   }
 
   void startPath(const double& x, const double& y) {
-    ostream_ << "<path fill='none' stroke='#0000ff' stroke-width='" << strokeWidth_ << "mm' " << "d='M" << x << "," << y << " L" << x << "," << y << " ";
+    ostream_ << "<path fill='none' stroke='#0000ff' stroke-width='" << strokeWidth_ << "' " << "d='M" << x << "," << y << " L" << x << "," << y << " ";
   }
 
   void startPath(const double& previousX, const double& previousY, const double& x, const double& y) {
-    ostream_ << "<path fill='none' stroke='#0000ff' stroke-width='" << strokeWidth_ << "mm' " << "d='M" << x << "," << y << " L" << x << "," << y << " ";
+    ostream_ << "<path fill='none' stroke='#0000ff' stroke-width='" << strokeWidth_ << "' " << "d='M" << x << "," << y << " L" << x << "," << y << " ";
   }
 
   void endPath() {
@@ -173,8 +173,8 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, double sampling
   previousX = x;
   previousY = y;
 
-  svg.drawCircle(lp.diameter/2, lp.diameter/2, lp.diameter/2);
-  svg.drawCircle(lp.diameter/2, lp.diameter/2, lp.centerHoleDiameter/2);
+  svg.drawCircle(lpRadiusPT, lpRadiusPT, lpRadiusPT);
+  svg.drawCircle(lpRadiusPT, lpRadiusPT, (lp.centerHoleDiameter / MM_PER_PT) /2);
   svg.startLayer();
 
   // Starting draw groove
@@ -295,7 +295,7 @@ int main(int argc, char** argv) {
   LP lp = { diameter, innerMargin, outerMargin, centerHoleDiameter, rpm, amplitudeMax, spacing };
   LaserCutter lc;
   lc.dpi_ = dpi;
-  SVG svg(std::cout, diameter, diameter, dpi, svgPathStrokeWidth);
+  SVG svg(std::cout, diameter / MM_PER_PT, diameter/ MM_PER_PT, dpi, svgPathStrokeWidth/ MM_PER_PT);
   SndfileHandle file = SndfileHandle(audioFile);
 
   run(file, lp, svg, lc, samplingRateOverride);
