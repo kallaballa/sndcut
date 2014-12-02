@@ -1,0 +1,13 @@
+Source: sndcut
+Section: misc
+Priority: optional
+Maintainer: Amir Hassan <amir@viel-zu.org>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.8.4
+Homepage: http://github.com/kallaballa/sndcut
+
+Package: sndcut
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},  ${dist:Depends}, 
+Description: Let's you generated LPs that you can laser cut from audio files.
+ sndcut is a program the generates LP records from audio files - it generates a SVG file that you can laser cut.
