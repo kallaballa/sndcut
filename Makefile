@@ -5,9 +5,9 @@ ifeq ($(UNAME_S), Darwin)
 endif
 
 CXX      := g++
-CXXFLAGS := -pthread -fno-strict-aliasing -std=c++0x -pedantic -Wall `pkg-config --cflags x11 sdl`
+CXXFLAGS := -pthread -fno-strict-aliasing -std=c++0x -pedantic -Wall
 LDFLAGS  := -L/opt/local/lib
-LIBS     := -lpthread -lm `pkg-config --libs x11 sdl` -lboost_system$(BOOST_MT) -lboost_thread$(BOOST_MT)
+LIBS     := -lpthread -lm 
 .PHONY: all release debian-release info debug clean debian-clean distclean 
 DESTDIR := /
 PREFIX := /usr/local
@@ -101,8 +101,8 @@ debian-install: ${TARGET}
 	${MAKE} -C src/ -${MAKEFLAGS} CXX=${CXX} NVCC="${NVCC}" NVCC_HOST_CXX="${NVCC_HOST_CXX}" NVCC_CXXFLAGS="${NVCC_CXXFLAGS}" install
 
 install: ${TARGET}
-	${MAKE} -C src/ ${MAKEFLAGS} CXX=${CXX} NVCC="${NVCC}" NVCC_HOST_CXX="${NVCC_HOST_CXX}" NVCC_CXXFLAGS="${NVCC_CXXFLAGS}" ${MAKECMDGOALS} install
+	${MAKE} -C src/ ${MAKEFLAGS} CXX=${CXX} NVCC="${NVCC}" NVCC_HOST_CXX="${NVCC_HOST_CXX}" NVCC_CXXFLAGS="${NVCC_CXXFLAGS}"  install
 
 distclean:
-	${MAKE} -C src/ ${MAKEFLAGS} CXX=${CXX} NVCC="${NVCC}" NVCC_HOST_CXX="${NVCC_HOST_CXX}" NVCC_CXXFLAGS="${NVCC_CXXFLAGS}" ${MAKECMDGOALS} distclean
+	${MAKE} -C src/ ${MAKEFLAGS} CXX=${CXX} NVCC="${NVCC}" NVCC_HOST_CXX="${NVCC_HOST_CXX}" NVCC_CXXFLAGS="${NVCC_CXXFLAGS}" distclean
 

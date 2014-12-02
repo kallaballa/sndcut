@@ -16,9 +16,9 @@ CFLAGS += -O2
 endif
 
 ifeq ($(shell dpkg-vendor --derives-from Ubuntu && echo yes),yes)
-SUBSTVARS = -Vdist:Depends="libboost-program_options1.55.0, libsndfile-dev" 
+SUBSTVARS = -Vdist:Depends="libboost-program-options1.55.0, libsndfile1" 
 else
-SUBSTVARS = -Vdist:Depends="libboost-program_options1.49.0, libsndfile-dev"
+SUBSTVARS = -Vdist:Depends="libboost-program-options1.49.0, libsndfile1"
 endif
 
 build: build-stamp

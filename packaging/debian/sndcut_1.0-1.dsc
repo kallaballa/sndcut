@@ -6,7 +6,7 @@ Version: 1.0-1
 Maintainer: Amir Hassan <amir@viel-zu.org>
 Homepage: http://github.com/kallaballa/sndcut
 Standards-Version: 3.8.4
-Build-Depends: debhelper (>= 7.0.50~), pkg-config, build-essential, libboost-program-options-dev, libsndfile-dev
+Build-Depends: debhelper (>= 7.0.50~), pkg-config, build-essential, libboost-program-options-dev, libsndfile1-dev
 Package-List: 
  sndcut deb misc optional
 Files: 
