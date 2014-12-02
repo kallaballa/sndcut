@@ -14,8 +14,8 @@ using std::cerr;
 using std::endl;
 using std::vector;
 
-double MM_PER_PT = 0.3527777; // 0.3527777mm per 1pt
-double MM_PER_INCH = 25.4; // 25.4mm per 1inch
+double MM_PER_PT = 0.3527777;
+double MM_PER_INCH = 25.4;
 
 struct LaserCutter {
   double dpi_ = 1200;
@@ -203,7 +203,7 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, double sampling
       break;
     }
 
-    // Separate <path> tag each 30000 points
+    // Separate <path> tag each 1000 points
     if (i >= 1000 && i % 1000 == 0) {
       svg.endPath();
       svg.startPath(previousX, previousY, x, y);
@@ -218,7 +218,7 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, double sampling
   svg.endPath();
   svg.endLayer();
 
-// Draw run-out groove
+  //Draw run-out groove
   svg.startPath(x,y);
 
   for (double d = 0; d < M_PI * 4; d += M_PI * 2 / lc.dpi_) {
