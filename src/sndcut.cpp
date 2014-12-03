@@ -168,8 +168,8 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, double sampling
   r = r - (lp.outMargin / MM_PER_PT);
 
   // Calculate starting point
-  x = r * cos((float) theta) + lpRadiusPT;
-  y = r * sin((float) theta) + lpRadiusPT;
+  x = r * cos(theta) + lpRadiusPT;
+  y = r * sin(theta) + lpRadiusPT;
   previousX = x;
   previousY = y;
 
@@ -189,8 +189,8 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, double sampling
     if (r > lp.centerHoleDiameter + lp.innerMargin) {
       amp = sample * ampMax;
 
-      x = (r + amp) * cos((float) theta) + lpRadiusPT;
-      y = (r + amp) * sin((float) theta) + lpRadiusPT;
+      x = (r + amp) * cos(theta) + lpRadiusPT;
+      y = (r + amp) * sin(theta) + lpRadiusPT;
 
       // Check the distance between last point and new point for limitation of output dpi
       double dist = hypot(previousX - x, previousY - y);
@@ -222,15 +222,15 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, double sampling
   svg.startPath(x,y);
 
   for (double d = 0; d < M_PI * 4; d += M_PI * 2 / lc.dpi_) {
-    x = (r) * cos((float) theta) + widthPT / 2;
-    y = (r) * sin((float) theta) + heightPT / 2;
+    x = (r) * cos(theta) + widthPT / 2;
+    y = (r) * sin(theta) + heightPT / 2;
     svg.writePoint(x,y);
     theta -= M_PI * 2 / lc.dpi_;
     r -= 1.0 / lc.dpi_; // Descrease 1pt while this loop
   }
   for (double d = 0; d < M_PI * 2; d += M_PI * 2 / lc.dpi_) {
-    x = (r) * cos((float) theta) + widthPT / 2;
-    y = (r) * sin((float) theta) + heightPT / 2;
+    x = (r) * cos(theta) + widthPT / 2;
+    y = (r) * sin(theta) + heightPT / 2;
     svg.writePoint(x,y);
     theta -= M_PI * 2 / lc.dpi_;
   }
