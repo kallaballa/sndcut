@@ -245,8 +245,8 @@ int main(int argc, char** argv) {
   string audioFile;
   double samplingRateOverride = 0; // zero means auto-detect
 
-  double diameter = 300;
-  double rpm = 45;
+  double diameter = 150;
+  double rpm = 78;
   double amplitudeMax = 0.15;
   double spacing = 0.7;
   double innerMargin = 100;
