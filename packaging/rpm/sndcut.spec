@@ -28,7 +28,7 @@ BuildRequires: gcc-c++ boost-devel libsndfile-devel libsamplerate-devel pkg-conf
 Requires: libboost_program_options1_54_0 libsndfile libsamplerate0
 %else
 BuildRequires: gcc-c++ boost-devel libsndfile-devel libsamplerate-devel pkg-config
-Requires: boost-program-options libsndfile libsamplerate0
+Requires: boost-program-options libsndfile libsamplerate
 %endif
 Source:       %{name}-%{version}.tar.bz2
 BuildRoot:    %{_tmppath}/%{name}-%{version}-build
