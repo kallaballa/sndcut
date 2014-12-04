@@ -281,7 +281,7 @@ int main(int argc, char** argv) {
   double innerMargin = 100;
   double outerMargin = 5;
   double centerHoleDiameter = 7.24;
-  size_t samplingRate = 8000;
+  size_t sampleRate = 8000;
 
   double svgPathStrokeWidth = 0.025;
 
@@ -289,7 +289,7 @@ int main(int argc, char** argv) {
 
   po::options_description genericDesc("Options");
   genericDesc.add_options()("diameter,d", po::value<double>(&diameter)->default_value(diameter),"The diameter of the record in mm")
-      ("rate,r", po::value<size_t>(&samplingRate)->default_value(samplingRate), "The sampling rate in Hz of the resulting record. Automatic resampling will be done if it differs from the input file sampling rate. Setting this parameter to zero will adopt the sampling rate of the input file.")
+      ("rate,r", po::value<size_t>(&sampleRate)->default_value(sampleRate), "The sampe rate in Hz of the resulting record. Automatic resampling will be done if it differs from the input file sample rate. Setting this parameter to zero will adopt the sample rate of the input file.")
       ("rpm,m", po::value<double>(&rpm)->default_value(rpm), "Target RPM of the record")
       ("amplitude,a", po::value<double>(&amplitudeMax)->default_value(amplitudeMax), "The maximum amplitude in mm")
       ("spacing,s", po::value<double>(&spacing)->default_value(spacing), "The space in between lines in mm")
@@ -322,7 +322,7 @@ int main(int argc, char** argv) {
     return 0;
   }
 
-  LP lp = { diameter, innerMargin, outerMargin, centerHoleDiameter, rpm, amplitudeMax, spacing, samplingRate };
+  LP lp = { diameter, innerMargin, outerMargin, centerHoleDiameter, rpm, amplitudeMax, spacing, sampleRate };
   LaserCutter lc;
   lc.dpi_ = dpi;
   SVG svg(std::cout, diameter / MM_PER_PT, diameter/ MM_PER_PT, dpi, svgPathStrokeWidth/ MM_PER_PT);
