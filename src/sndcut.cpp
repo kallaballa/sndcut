@@ -4,6 +4,7 @@
 #include <sndfile.hh>
 #include <boost/program_options.hpp>
 #include <boost/format.hpp>
+#include <samplerate.h>
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <limits>
@@ -29,6 +30,7 @@ struct LP {
   double rpm;
   double amplitudeMax;
   double spacing;
+  size_t rate;
 };
 
 class SVG {
@@ -70,7 +72,7 @@ public:
     write_svg_end();
   }
 
-  void drawCircle(double cx, double cy, double r) {
+  void writeCircle(double cx, double cy, double r) {
     ostream_ << "<circle fill='none' stroke='#00ff00' stroke-width='" << strokeWidth_ << "' cx='" << cx << "' cy='" << cy << "' r='" << r << "'/>" << std::endl;
   }
 
@@ -121,6 +123,30 @@ std::vector<double> read_fully(SndfileHandle& file, size_t channels) {
   return data;
 }
 
+std::vector<double> resample(vector<double> data, size_t channels, double targetSampleRate) {
+  std::vector<float> f_data;
+  std::vector<float> f_result(data.size());
+  std::vector<double> d_result;
+
+  for(double& d: data)
+    f_data.push_back(d);
+
+  SRC_DATA src_data;
+
+  src_data.data_in = f_data.data();
+  src_data.input_frames = f_data.size();
+  src_data.data_out = f_result.data();
+  src_data.output_frames = f_result.size();
+  src_data.src_ratio = 0.5;
+
+  src_simple(&src_data, SRC_SINC_BEST_QUALITY, 1);
+
+  for(float& f: f_result)
+    d_result.push_back(f);
+
+  return d_result;
+}
+
 void normalize(std::vector<double>& data) {
   double min = std::numeric_limits<double>().max();
   double max = std::numeric_limits<double>().min();
@@ -143,14 +169,20 @@ void normalize(std::vector<double>& data) {
   }
 }
 
-void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, double samplingRateOverride) {
+void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc) {
   size_t channels = file.channels();
-  size_t rate = file.samplerate();
+  size_t sourceSampleRate = file.samplerate();;
 
-  if(samplingRateOverride != 0)
-    rate = samplingRateOverride;
+  vector<double> data = read_fully(file, channels);
+  if(lp.rate != 0) {
+    data = resample(data, channels, lp.rate);
+  } else {
+    lp.rate = sourceSampleRate;
+  }
 
-  double a = 360.0 / (rate * (60.0 / lp.rpm));
+  normalize(data);
+
+  double a = 360.0 / (lp.rate * (60.0 / lp.rpm));
   double aRad = a * ((double) M_PI / 180.0);
   double r = 0;
   double theta = 0;
@@ -173,15 +205,13 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, double sampling
   previousX = x;
   previousY = y;
 
-  svg.drawCircle(lpRadiusPT, lpRadiusPT, lpRadiusPT);
-  svg.drawCircle(lpRadiusPT, lpRadiusPT, (lp.centerHoleDiameter / MM_PER_PT) /2);
+  svg.writeCircle(lpRadiusPT, lpRadiusPT, lpRadiusPT);
+  svg.writeCircle(lpRadiusPT, lpRadiusPT, (lp.centerHoleDiameter / MM_PER_PT) /2);
   svg.startLayer();
 
   // Starting draw groove
   svg.startPath(x,y);
 
-  vector<double> data = read_fully(file, channels);
-  normalize(data);
   double amp = 0.0;
   double ampMax = lp.amplitudeMax / MM_PER_PT;
 
@@ -211,7 +241,7 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, double sampling
 
     i++;
     theta -= aRad;
-    r -= (ampMax + (lp.spacing / MM_PER_PT)) / (rate * (60.0 / lp.rpm));
+    r -= (ampMax + (lp.spacing / MM_PER_PT)) / (lp.rate * (60.0 / lp.rpm));
   }
 
   // Close groove path
@@ -243,7 +273,6 @@ int main(int argc, char** argv) {
    * All distance options are in millimeter.
    */
   string audioFile;
-  double samplingRateOverride = 0; // zero means auto-detect
 
   double diameter = 150;
   double rpm = 78;
@@ -252,6 +281,7 @@ int main(int argc, char** argv) {
   double innerMargin = 100;
   double outerMargin = 5;
   double centerHoleDiameter = 7.24;
+  size_t samplingRate = 8000;
 
   double svgPathStrokeWidth = 0.025;
 
@@ -259,7 +289,7 @@ int main(int argc, char** argv) {
 
   po::options_description genericDesc("Options");
   genericDesc.add_options()("diameter,d", po::value<double>(&diameter)->default_value(diameter),"The diameter of the record in mm")
-      ("rate,r", po::value<double>(&samplingRateOverride)->default_value(samplingRateOverride), "Manual override for the sampling rate of the record in Hz. The default is auto-detection from the input file.")
+      ("rate,r", po::value<size_t>(&samplingRate)->default_value(samplingRate), "The sampling rate in Hz of the resulting record. Automatic resampling will be done if it differs from the input file sampling rate. Setting this parameter to zero will adopt the sampling rate of the input file.")
       ("rpm,m", po::value<double>(&rpm)->default_value(rpm), "Target RPM of the record")
       ("amplitude,a", po::value<double>(&amplitudeMax)->default_value(amplitudeMax), "The maximum amplitude in mm")
       ("spacing,s", po::value<double>(&spacing)->default_value(spacing), "The space in between lines in mm")
@@ -292,12 +322,12 @@ int main(int argc, char** argv) {
     return 0;
   }
 
-  LP lp = { diameter, innerMargin, outerMargin, centerHoleDiameter, rpm, amplitudeMax, spacing };
+  LP lp = { diameter, innerMargin, outerMargin, centerHoleDiameter, rpm, amplitudeMax, spacing, samplingRate };
   LaserCutter lc;
   lc.dpi_ = dpi;
   SVG svg(std::cout, diameter / MM_PER_PT, diameter/ MM_PER_PT, dpi, svgPathStrokeWidth/ MM_PER_PT);
   SndfileHandle file = SndfileHandle(audioFile);
 
-  run(file, lp, svg, lc, samplingRateOverride);
+  run(file, lp, svg, lc);
   return 0;
 }

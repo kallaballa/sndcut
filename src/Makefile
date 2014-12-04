@@ -5,8 +5,8 @@ TARGET := sndcut.html
 endif
 
 SRCS  := sndcut.cpp
-CXXFLAGS += `pkg-config --cflags sndfile`
-LIBS += `pkg-config --libs sndfile` -lboost_program_options
+CXXFLAGS += `pkg-config --cflags sndfile samplerate`
+LIBS += `pkg-config --libs sndfile samplerate` -lboost_program_options
 LDFLAGS += 
 
 #precompiled headers

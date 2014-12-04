@@ -24,11 +24,11 @@ Group: Hardware/Other
 URL: https://github.com/kallaballa/sndcut
 Packager: Amir Hassan <amir@viel-zu.org>
 %if %{defined suse_version}
-BuildRequires: gcc-c++ boost-devel libsndfile-devel pkg-config
-Requires: libboost_program_options1_54_0 libsndfile
+BuildRequires: gcc-c++ boost-devel libsndfile-devel libsamplerate-devel pkg-config
+Requires: libboost_program_options1_54_0 libsndfile libsamplerate0
 %else
-BuildRequires: gcc-c++ boost-devel libsndfile-devel pkg-config
-Requires: boost-program-options libsndfile
+BuildRequires: gcc-c++ boost-devel libsndfile-devel libsamplerate-devel pkg-config
+Requires: boost-program-options libsndfile libsamplerate0
 %endif
 Source:       %{name}-%{version}.tar.bz2
 BuildRoot:    %{_tmppath}/%{name}-%{version}-build
