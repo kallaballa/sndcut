@@ -174,7 +174,7 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc) {
   size_t sourceSampleRate = file.samplerate();;
 
   vector<double> data = read_fully(file, channels);
-  if(lp.rate != 0) {
+  if(lp.rate != 0 && lp.rate != sourceSampleRate) {
     data = resample(data, channels, lp.rate);
   } else {
     lp.rate = sourceSampleRate;
@@ -182,7 +182,7 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc) {
 
   normalize(data);
 
-  double a = 360.0 / (lp.rate * (60.0 / lp.rpm));
+  double a = 360.0 / ((double)lp.rate * (60.0 / lp.rpm));
   double aRad = a * ((double) M_PI / 180.0);
   double r = 0;
   double theta = 0;
@@ -241,7 +241,7 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc) {
 
     i++;
     theta -= aRad;
-    r -= (ampMax + (lp.spacing / MM_PER_PT)) / (lp.rate * (60.0 / lp.rpm));
+    r -= (ampMax + (lp.spacing / MM_PER_PT)) / ((double)lp.rate * (60.0 / lp.rpm));
   }
 
   // Close groove path
@@ -280,7 +280,7 @@ int main(int argc, char** argv) {
   double spacing = 0.7;
   double innerMargin = 100;
   double outerMargin = 5;
-  double centerHoleDiameter = 7.24;
+  double centerHoleDiameter = 7;
   size_t sampleRate = 8000;
 
   double svgPathStrokeWidth = 0.025;
