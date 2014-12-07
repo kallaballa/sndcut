@@ -36,7 +36,7 @@ The material i used is 5mm acrylic. I used a Epilog Legend 36Ext (60W) with foll
 - Green lines - Speed: 12%, Power: 100%
 - Blue lines - Speed: 10%, Power: 3%
 
-If you happen to own a Epilog Legend 36Ext laser cutter you can use the ".cut" files included in the examples folder. Those files have all settings done and are ready to laser.
+If you happen to own a Epilog Legend 36Ext laser cutter you can use the ".cut" files included in the examples folder. Those files have all settings done and are ready to laser with [Ctrl-Cut](http://github.com/Metalab/ctrl-cut)
 
 #Packages
 There are linux packages available for following distributions: 
