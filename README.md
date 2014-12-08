@@ -3,7 +3,7 @@ it's implementation is inspired by https://github.com/mitsuhito/CuttingRecordGen
 
 #Usage
 
-Using sndcut is very simple. to generate a record you simply have to invoke it with an audio file (usually a wav file since mp3 is not supported. have a look [here](http://www.mega-nerd.com/libsndfile/#Features) for supported file types.
+Using sndcut is very simple. To generate a record you simply have to invoke it with an audio file (usually a wav file since mp3 is not supported. Have a look [here](http://www.mega-nerd.com/libsndfile/#Features) for supported file types.
 
 The following examples will give you and idea of the basic usage. But you should be aware that you can tweak following parameters:
 
@@ -46,3 +46,16 @@ There are linux packages available for following distributions:
 - Ubuntu (14.04, 14.10)
 
 [Download](http://software.opensuse.org/download.html?project=home%3Aelchaschab&package=sndcut)
+
+#Build
+
+You'll need to install developement version of following libraries:
+- boost_program_options
+- libsamplerate
+- libsndfile
+
+After you installed the dependencies all you have to do is type
+
+    make
+
+Aside from linux it has been reported to build on Mac OS X.
