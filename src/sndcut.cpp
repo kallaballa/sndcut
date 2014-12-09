@@ -8,6 +8,12 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <limits>
+#include "aquila/global.h"
+#include "aquila/functions.h"
+#include "aquila/transform/FftFactory.h"
+#include "aquila/source/FramesCollection.h"
+#include "aquila/tools/TextPlot.h"
+
 namespace po = boost::program_options;
 
 using std::string;
@@ -31,6 +37,11 @@ struct LP {
   double amplitudeMax;
   double spacing;
   double rate;
+};
+
+struct AudioFiltering {
+  bool normalize;
+  bool riaa;
 };
 
 class SVG {
@@ -158,6 +169,81 @@ std::vector<double> resample(vector<double> data, double sourceSampleRate, doubl
   return d_target;
 }
 
+struct InverseRIAALookup {
+  struct Entry {
+    double hz;
+    double energy;
+  };
+
+  //values taken from http://de.wikipedia.org/wiki/Schneidkennlinie
+  Entry entries[4] = {
+      {50, pow(10.0,17.0 / 20.0) / 10 * -1.0},
+      {500, pow(10.0, 3.0 / 20.0) / 10 * -1.0},
+      {1000, pow(10.0, 0.0 / 20.0) / 10},
+      {2120, pow(10.0, 3.0 / 20.0) / 10}
+  };
+};
+
+vector<double> inverse_RIAA_filter(vector<double>& source, size_t samplingRate) {
+  using namespace Aquila;
+  vector<double> target;
+  InverseRIAALookup lookup;
+  const std::size_t SIZE = 128;
+
+  SignalSource in(source, samplingRate);
+  FrequencyType sampleFreq = samplingRate;
+
+  FramesCollection frames(in,SIZE);
+  SpectrumType filterSpectrum(SIZE);
+  double data[SIZE];
+
+  for (auto frame : frames) {
+   auto signalFFT = FftFactory::getFft(SIZE);
+    SpectrumType signalSpectrum = signalFFT->fft(frame.toArray());
+    for (std::size_t i = 0; i < SIZE; ++i) {
+      filterSpectrum[i] = 1.0;
+
+      for(size_t j = 0; j < 3; ++j) {
+        size_t minBin = 0;
+        double minEnergy = -1;
+        size_t maxBin = (SIZE * lookup.entries[j].hz / sampleFreq);
+        double maxEnergy = lookup.entries[j].energy;
+        if(j >= 1) {
+          minBin = (SIZE * lookup.entries[j - 1].hz / sampleFreq);
+          minEnergy = lookup.entries[j - 1].energy;
+        }
+
+        if (i <= maxBin) {
+          if(i == 0 || maxBin == 0)
+            filterSpectrum[i] = 0.0;
+          else
+            filterSpectrum[i] = 1.0 + (minEnergy + (fabs(maxEnergy - minEnergy) * ((double)(i - minBin) / (double)(maxBin - minBin))));
+          break;
+        }
+      }
+    }
+    /*
+    //Plot the filter spectrum
+    Aquila::TextPlot plt("Filter Spectrum:");
+    plt.plotSpectrum(filterSpectrum);
+     */
+
+    // the following call does the multiplication of two spectra
+    // (which is complementary to convolution in time domain)
+    std::transform(std::begin(signalSpectrum), std::end(signalSpectrum), std::begin(filterSpectrum), std::begin(signalSpectrum),
+        [&] (ComplexType x, ComplexType y) {
+      return x * y;
+    });
+
+    signalFFT->ifft(signalSpectrum, data);
+    for(size_t i = 0; i < SIZE; ++i) {
+      target.push_back(data[i]);
+    }
+  }
+
+  return target;
+}
+
 void normalize(std::vector<double>& data) {
   double min = std::numeric_limits<double>().max();
   double max = std::numeric_limits<double>().min();
@@ -173,14 +259,10 @@ void normalize(std::vector<double>& data) {
 
   for (double& d : data) {
     d = (d - mid) * scale;
-    assert(d >= -1);
-    assert(d <= 1);
-    min = std::min(min, d);
-    max = std::max(max, d);
   }
 }
 
-void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc) {
+void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, AudioFiltering& af) {
   size_t channels = file.channels();
   double sourceSampleRate = file.samplerate();;
 
@@ -192,7 +274,11 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc) {
     lp.rate = sourceSampleRate;
   }
 
-  normalize(data);
+  if(af.riaa)
+    data = inverse_RIAA_filter(data, lp.rate);
+
+  if(af.normalize)
+    normalize(data);
 
   double a = 360.0 / (lp.rate * (60.0 / lp.rpm));
   double aRad = a * ((double) M_PI / 180.0);
@@ -293,10 +379,10 @@ int main(int argc, char** argv) {
   double outerMargin = 5;
   double centerHoleDiameter = 7;
   double sampleRate = 8000;
-
   double svgPathStrokeWidth = 0.025;
-
   double dpi = 1200;
+  bool riaaFilter = true;
+  bool normalize = true;
 
   po::options_description genericDesc("Options");
   genericDesc.add_options()("diameter,d", po::value<double>(&diameter)->default_value(diameter),"The diameter of the record in mm")
@@ -309,6 +395,8 @@ int main(int argc, char** argv) {
       ("center,c", po::value<double>(&centerHoleDiameter)->default_value(centerHoleDiameter), "The center hole diameter in mm")
       ("stroke,t", po::value<double>(&svgPathStrokeWidth)->default_value(svgPathStrokeWidth), "The stroke width in the svg file in mm")
       ("dpi,p", po::value<double>(&dpi)->default_value(dpi), "The laser cutter DPI.")
+      ("enable-normalize,n", po::value<bool>(&normalize)->default_value(dpi), "Enable audio normalization")
+      ("enable-riaafilter,f", po::value<bool>(&riaaFilter)->default_value(dpi), "Enable inverse RIAA equalization")
       ("help,h", "Produce help message");
 
   po::options_description hidden("Hidden options");
@@ -337,8 +425,10 @@ int main(int argc, char** argv) {
   LaserCutter lc;
   lc.dpi_ = dpi;
   SVG svg(std::cout, diameter / MM_PER_PT, diameter/ MM_PER_PT, dpi, svgPathStrokeWidth/ MM_PER_PT);
+  AudioFiltering af = { normalize, riaaFilter };
   SndfileHandle file = SndfileHandle(audioFile);
 
-  run(file, lp, svg, lc);
+  run(file, lp, svg, lc, af);
+
   return 0;
 }
