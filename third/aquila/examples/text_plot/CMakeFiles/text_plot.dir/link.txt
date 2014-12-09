@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=gnu++0x    CMakeFiles/text_plot.dir/text_plot.cpp.o  -o text_plot -rdynamic ../../libAquila.a ../../lib/libOoura_fft.a 

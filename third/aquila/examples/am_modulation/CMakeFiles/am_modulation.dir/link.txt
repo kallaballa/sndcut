@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=gnu++0x    CMakeFiles/am_modulation.dir/am_modulation.cpp.o  -o am_modulation -rdynamic ../../libAquila.a ../../lib/libOoura_fft.a 

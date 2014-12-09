@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/aquila_test.dir/main.cpp.o"
+  "CMakeFiles/aquila_test.dir/functions.cpp.o"
+  "CMakeFiles/aquila_test.dir/Exceptions.cpp.o"
+  "CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.o"
+  "CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.o"
+  "CMakeFiles/aquila_test.dir/ml/Dtw.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/Frame.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/SignalSource.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/WaveFile.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.o"
+  "CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.o"
+  "CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.o"
+  "CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.o"
+  "CMakeFiles/aquila_test.dir/transform/Dft.cpp.o"
+  "CMakeFiles/aquila_test.dir/transform/Fft.cpp.o"
+  "CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.o"
+  "CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.o"
+  "CMakeFiles/aquila_test.dir/transform/Dct.cpp.o"
+  "CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.o"
+  "aquila_test.pdb"
+  "aquila_test"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/aquila_test.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

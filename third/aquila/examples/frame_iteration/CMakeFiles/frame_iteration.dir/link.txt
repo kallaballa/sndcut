@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=gnu++0x    CMakeFiles/frame_iteration.dir/frame_iteration.cpp.o  -o frame_iteration -rdynamic ../../libAquila.a ../../lib/libOoura_fft.a 

@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=gnu++0x    CMakeFiles/window_usage.dir/window_usage.cpp.o  -o window_usage -rdynamic ../../libAquila.a ../../lib/libOoura_fft.a 

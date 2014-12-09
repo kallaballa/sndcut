@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=gnu++0x    CMakeFiles/wave_iteration.dir/wave_iteration.cpp.o  -o wave_iteration -rdynamic ../../libAquila.a ../../lib/libOoura_fft.a 

@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=gnu++0x    CMakeFiles/square_generator.dir/square_generator.cpp.o  -o square_generator -rdynamic ../../libAquila.a ../../lib/libOoura_fft.a 

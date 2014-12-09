@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=gnu++0x    CMakeFiles/sine_generator.dir/sine_generator.cpp.o  -o sine_generator -rdynamic ../../libAquila.a ../../lib/libOoura_fft.a 

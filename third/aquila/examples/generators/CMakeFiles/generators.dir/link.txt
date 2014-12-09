@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=gnu++0x    CMakeFiles/generators.dir/generators.cpp.o  -o generators -rdynamic ../../libAquila.a ../../lib/libOoura_fft.a 
