@@ -1,4 +1,15 @@
+.cproject
+.project
+src/sndcut
+src/sndcut.dep
+src/sndcut.o
 src/pclintthird/aquila/CMakeCache.txt
+third/aquila/CMakeCache.txt
+third/aquila/CMakeFiles/Aquila.dir/aquila/
+third/aquila/lib/CMakeFiles/Ooura_fft.dir/ooura/
+third/aquila/lib/libOoura_fft.a
+third/aquila/lib/unittestpp/TestUnitTest++
+third/aquila/libAquila.a
 third/aquila/CMakeFiles/3.0.2/CMakeCCompiler.cmake
 third/aquila/CMakeFiles/3.0.2/CMakeCXXCompiler.cmake
 third/aquila/CMakeFiles/3.0.2/CMakeSystem.cmake
