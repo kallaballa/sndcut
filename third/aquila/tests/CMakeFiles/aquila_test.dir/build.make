@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/elchaschab/devel/sndcut-1.0/third/aquila
+CMAKE_SOURCE_DIR = /home/elchaschab/devel/sndcut/third/aquila
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/elchaschab/devel/sndcut-1.0/third/aquila
+CMAKE_BINARY_DIR = /home/elchaschab/devel/sndcut/third/aquila
 
 # Include any dependencies generated for this target.
 include tests/CMakeFiles/aquila_test.dir/depend.make
@@ -51,17 +51,17 @@ include tests/CMakeFiles/aquila_test.dir/flags.make
 
 tests/CMakeFiles/aquila_test.dir/main.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/main.cpp.o: tests/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/main.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/main.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/main.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/main.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/main.cpp
 
 tests/CMakeFiles/aquila_test.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/main.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/main.cpp > CMakeFiles/aquila_test.dir/main.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/main.cpp > CMakeFiles/aquila_test.dir/main.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/main.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/main.cpp -o CMakeFiles/aquila_test.dir/main.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/main.cpp -o CMakeFiles/aquila_test.dir/main.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/main.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/main.cpp.o.requires
@@ -74,17 +74,17 @@ tests/CMakeFiles/aquila_test.dir/main.cpp.o.provides.build: tests/CMakeFiles/aqu
 
 tests/CMakeFiles/aquila_test.dir/functions.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/functions.cpp.o: tests/functions.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/functions.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/functions.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/functions.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/functions.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/functions.cpp
 
 tests/CMakeFiles/aquila_test.dir/functions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/functions.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/functions.cpp > CMakeFiles/aquila_test.dir/functions.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/functions.cpp > CMakeFiles/aquila_test.dir/functions.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/functions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/functions.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/functions.cpp -o CMakeFiles/aquila_test.dir/functions.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/functions.cpp -o CMakeFiles/aquila_test.dir/functions.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/functions.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/functions.cpp.o.requires
@@ -97,17 +97,17 @@ tests/CMakeFiles/aquila_test.dir/functions.cpp.o.provides.build: tests/CMakeFile
 
 tests/CMakeFiles/aquila_test.dir/Exceptions.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/Exceptions.cpp.o: tests/Exceptions.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/Exceptions.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/Exceptions.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/Exceptions.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/Exceptions.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/Exceptions.cpp
 
 tests/CMakeFiles/aquila_test.dir/Exceptions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/Exceptions.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/Exceptions.cpp > CMakeFiles/aquila_test.dir/Exceptions.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/Exceptions.cpp > CMakeFiles/aquila_test.dir/Exceptions.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/Exceptions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/Exceptions.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/Exceptions.cpp -o CMakeFiles/aquila_test.dir/Exceptions.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/Exceptions.cpp -o CMakeFiles/aquila_test.dir/Exceptions.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/Exceptions.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/Exceptions.cpp.o.requires
@@ -120,17 +120,17 @@ tests/CMakeFiles/aquila_test.dir/Exceptions.cpp.o.provides.build: tests/CMakeFil
 
 tests/CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.o: tests/filter/MelFilter.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/filter/MelFilter.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/filter/MelFilter.cpp
 
 tests/CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/filter/MelFilter.cpp > CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/filter/MelFilter.cpp > CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/filter/MelFilter.cpp -o CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/filter/MelFilter.cpp -o CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.o.requires
@@ -143,17 +143,17 @@ tests/CMakeFiles/aquila_test.dir/filter/MelFilter.cpp.o.provides.build: tests/CM
 
 tests/CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.o: tests/filter/MelFilterBank.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/filter/MelFilterBank.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/filter/MelFilterBank.cpp
 
 tests/CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/filter/MelFilterBank.cpp > CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/filter/MelFilterBank.cpp > CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/filter/MelFilterBank.cpp -o CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/filter/MelFilterBank.cpp -o CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.o.requires
@@ -166,17 +166,17 @@ tests/CMakeFiles/aquila_test.dir/filter/MelFilterBank.cpp.o.provides.build: test
 
 tests/CMakeFiles/aquila_test.dir/ml/Dtw.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/ml/Dtw.cpp.o: tests/ml/Dtw.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/ml/Dtw.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/ml/Dtw.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/ml/Dtw.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/ml/Dtw.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/ml/Dtw.cpp
 
 tests/CMakeFiles/aquila_test.dir/ml/Dtw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/ml/Dtw.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/ml/Dtw.cpp > CMakeFiles/aquila_test.dir/ml/Dtw.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/ml/Dtw.cpp > CMakeFiles/aquila_test.dir/ml/Dtw.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/ml/Dtw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/ml/Dtw.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/ml/Dtw.cpp -o CMakeFiles/aquila_test.dir/ml/Dtw.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/ml/Dtw.cpp -o CMakeFiles/aquila_test.dir/ml/Dtw.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/ml/Dtw.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/ml/Dtw.cpp.o.requires
@@ -189,17 +189,17 @@ tests/CMakeFiles/aquila_test.dir/ml/Dtw.cpp.o.provides.build: tests/CMakeFiles/a
 
 tests/CMakeFiles/aquila_test.dir/source/Frame.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/Frame.cpp.o: tests/source/Frame.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/Frame.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/Frame.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/Frame.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/Frame.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/Frame.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/Frame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/Frame.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/Frame.cpp > CMakeFiles/aquila_test.dir/source/Frame.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/Frame.cpp > CMakeFiles/aquila_test.dir/source/Frame.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/Frame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/Frame.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/Frame.cpp -o CMakeFiles/aquila_test.dir/source/Frame.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/Frame.cpp -o CMakeFiles/aquila_test.dir/source/Frame.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/Frame.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/Frame.cpp.o.requires
@@ -212,17 +212,17 @@ tests/CMakeFiles/aquila_test.dir/source/Frame.cpp.o.provides.build: tests/CMakeF
 
 tests/CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.o: tests/source/FramesCollection.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/FramesCollection.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/FramesCollection.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/FramesCollection.cpp > CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/FramesCollection.cpp > CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/FramesCollection.cpp -o CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/FramesCollection.cpp -o CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.o.requires
@@ -235,17 +235,17 @@ tests/CMakeFiles/aquila_test.dir/source/FramesCollection.cpp.o.provides.build: t
 
 tests/CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.o: tests/source/PlainTextFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/PlainTextFile.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/PlainTextFile.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/PlainTextFile.cpp > CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/PlainTextFile.cpp > CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/PlainTextFile.cpp -o CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/PlainTextFile.cpp -o CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.o.requires
@@ -258,17 +258,17 @@ tests/CMakeFiles/aquila_test.dir/source/PlainTextFile.cpp.o.provides.build: test
 
 tests/CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.o: tests/source/RawPcmFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/RawPcmFile.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/RawPcmFile.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/RawPcmFile.cpp > CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/RawPcmFile.cpp > CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/RawPcmFile.cpp -o CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/RawPcmFile.cpp -o CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.o.requires
@@ -281,17 +281,17 @@ tests/CMakeFiles/aquila_test.dir/source/RawPcmFile.cpp.o.provides.build: tests/C
 
 tests/CMakeFiles/aquila_test.dir/source/SignalSource.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/SignalSource.cpp.o: tests/source/SignalSource.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/SignalSource.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/SignalSource.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/SignalSource.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/SignalSource.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/SignalSource.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/SignalSource.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/SignalSource.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/SignalSource.cpp > CMakeFiles/aquila_test.dir/source/SignalSource.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/SignalSource.cpp > CMakeFiles/aquila_test.dir/source/SignalSource.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/SignalSource.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/SignalSource.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/SignalSource.cpp -o CMakeFiles/aquila_test.dir/source/SignalSource.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/SignalSource.cpp -o CMakeFiles/aquila_test.dir/source/SignalSource.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/SignalSource.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/SignalSource.cpp.o.requires
@@ -304,17 +304,17 @@ tests/CMakeFiles/aquila_test.dir/source/SignalSource.cpp.o.provides.build: tests
 
 tests/CMakeFiles/aquila_test.dir/source/WaveFile.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/WaveFile.cpp.o: tests/source/WaveFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/WaveFile.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/WaveFile.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/WaveFile.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/WaveFile.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/WaveFile.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/WaveFile.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/WaveFile.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/WaveFile.cpp > CMakeFiles/aquila_test.dir/source/WaveFile.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/WaveFile.cpp > CMakeFiles/aquila_test.dir/source/WaveFile.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/WaveFile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/WaveFile.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/WaveFile.cpp -o CMakeFiles/aquila_test.dir/source/WaveFile.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/WaveFile.cpp -o CMakeFiles/aquila_test.dir/source/WaveFile.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/WaveFile.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/WaveFile.cpp.o.requires
@@ -327,17 +327,17 @@ tests/CMakeFiles/aquila_test.dir/source/WaveFile.cpp.o.provides.build: tests/CMa
 
 tests/CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.o: tests/source/generator/SineGenerator.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/SineGenerator.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/SineGenerator.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/SineGenerator.cpp > CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/SineGenerator.cpp > CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/SineGenerator.cpp -o CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/SineGenerator.cpp -o CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.o.requires
@@ -350,17 +350,17 @@ tests/CMakeFiles/aquila_test.dir/source/generator/SineGenerator.cpp.o.provides.b
 
 tests/CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.o: tests/source/generator/SquareGenerator.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/SquareGenerator.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/SquareGenerator.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/SquareGenerator.cpp > CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/SquareGenerator.cpp > CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/SquareGenerator.cpp -o CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/SquareGenerator.cpp -o CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.o.requires
@@ -373,17 +373,17 @@ tests/CMakeFiles/aquila_test.dir/source/generator/SquareGenerator.cpp.o.provides
 
 tests/CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.o: tests/source/generator/TriangleGenerator.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/TriangleGenerator.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/TriangleGenerator.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/TriangleGenerator.cpp > CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/TriangleGenerator.cpp > CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/TriangleGenerator.cpp -o CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/TriangleGenerator.cpp -o CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.o.requires
@@ -396,17 +396,17 @@ tests/CMakeFiles/aquila_test.dir/source/generator/TriangleGenerator.cpp.o.provid
 
 tests/CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.o: tests/source/generator/WhiteNoiseGenerator.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/WhiteNoiseGenerator.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/WhiteNoiseGenerator.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/WhiteNoiseGenerator.cpp > CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/WhiteNoiseGenerator.cpp > CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/WhiteNoiseGenerator.cpp -o CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/WhiteNoiseGenerator.cpp -o CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.o.requires
@@ -419,17 +419,17 @@ tests/CMakeFiles/aquila_test.dir/source/generator/WhiteNoiseGenerator.cpp.o.prov
 
 tests/CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.o: tests/source/generator/PinkNoiseGenerator.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/PinkNoiseGenerator.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/PinkNoiseGenerator.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/PinkNoiseGenerator.cpp > CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/PinkNoiseGenerator.cpp > CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/generator/PinkNoiseGenerator.cpp -o CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/generator/PinkNoiseGenerator.cpp -o CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.o.requires
@@ -442,17 +442,17 @@ tests/CMakeFiles/aquila_test.dir/source/generator/PinkNoiseGenerator.cpp.o.provi
 
 tests/CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.o: tests/source/window/BarlettWindow.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/BarlettWindow.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/BarlettWindow.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/BarlettWindow.cpp > CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/BarlettWindow.cpp > CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/BarlettWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/BarlettWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.o.requires
@@ -465,17 +465,17 @@ tests/CMakeFiles/aquila_test.dir/source/window/BarlettWindow.cpp.o.provides.buil
 
 tests/CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.o: tests/source/window/BlackmanWindow.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/BlackmanWindow.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/BlackmanWindow.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/BlackmanWindow.cpp > CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/BlackmanWindow.cpp > CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/BlackmanWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/BlackmanWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.o.requires
@@ -488,17 +488,17 @@ tests/CMakeFiles/aquila_test.dir/source/window/BlackmanWindow.cpp.o.provides.bui
 
 tests/CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.o: tests/source/window/FlattopWindow.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_20)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/FlattopWindow.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/FlattopWindow.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/FlattopWindow.cpp > CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/FlattopWindow.cpp > CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/FlattopWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/FlattopWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.o.requires
@@ -511,17 +511,17 @@ tests/CMakeFiles/aquila_test.dir/source/window/FlattopWindow.cpp.o.provides.buil
 
 tests/CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.o: tests/source/window/GaussianWindow.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_21)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/GaussianWindow.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/GaussianWindow.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/GaussianWindow.cpp > CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/GaussianWindow.cpp > CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/GaussianWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/GaussianWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.o.requires
@@ -534,17 +534,17 @@ tests/CMakeFiles/aquila_test.dir/source/window/GaussianWindow.cpp.o.provides.bui
 
 tests/CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.o: tests/source/window/HammingWindow.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_22)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/HammingWindow.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/HammingWindow.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/HammingWindow.cpp > CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/HammingWindow.cpp > CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/HammingWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/HammingWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.o.requires
@@ -557,17 +557,17 @@ tests/CMakeFiles/aquila_test.dir/source/window/HammingWindow.cpp.o.provides.buil
 
 tests/CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.o: tests/source/window/HannWindow.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_23)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/HannWindow.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/HannWindow.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/HannWindow.cpp > CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/HannWindow.cpp > CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/HannWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/HannWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.o.requires
@@ -580,17 +580,17 @@ tests/CMakeFiles/aquila_test.dir/source/window/HannWindow.cpp.o.provides.build: 
 
 tests/CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.o: tests/source/window/RectangularWindow.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_24)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_24)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/RectangularWindow.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/RectangularWindow.cpp
 
 tests/CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/RectangularWindow.cpp > CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/RectangularWindow.cpp > CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/source/window/RectangularWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/source/window/RectangularWindow.cpp -o CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.o.requires
@@ -603,17 +603,17 @@ tests/CMakeFiles/aquila_test.dir/source/window/RectangularWindow.cpp.o.provides.
 
 tests/CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.o: tests/tools/TextPlot.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_25)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_25)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/tools/TextPlot.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/tools/TextPlot.cpp
 
 tests/CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/tools/TextPlot.cpp > CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/tools/TextPlot.cpp > CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/tools/TextPlot.cpp -o CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/tools/TextPlot.cpp -o CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.o.requires
@@ -626,17 +626,17 @@ tests/CMakeFiles/aquila_test.dir/tools/TextPlot.cpp.o.provides.build: tests/CMak
 
 tests/CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.o: tests/transform/AquilaFft.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_26)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_26)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/AquilaFft.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/transform/AquilaFft.cpp
 
 tests/CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/AquilaFft.cpp > CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/transform/AquilaFft.cpp > CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/AquilaFft.cpp -o CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/transform/AquilaFft.cpp -o CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.o.requires
@@ -649,17 +649,17 @@ tests/CMakeFiles/aquila_test.dir/transform/AquilaFft.cpp.o.provides.build: tests
 
 tests/CMakeFiles/aquila_test.dir/transform/Dft.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/transform/Dft.cpp.o: tests/transform/Dft.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_27)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_27)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/transform/Dft.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/Dft.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Dft.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/Dft.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Dft.cpp
 
 tests/CMakeFiles/aquila_test.dir/transform/Dft.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/transform/Dft.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Dft.cpp > CMakeFiles/aquila_test.dir/transform/Dft.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Dft.cpp > CMakeFiles/aquila_test.dir/transform/Dft.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/transform/Dft.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/transform/Dft.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Dft.cpp -o CMakeFiles/aquila_test.dir/transform/Dft.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Dft.cpp -o CMakeFiles/aquila_test.dir/transform/Dft.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/transform/Dft.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/transform/Dft.cpp.o.requires
@@ -672,17 +672,17 @@ tests/CMakeFiles/aquila_test.dir/transform/Dft.cpp.o.provides.build: tests/CMake
 
 tests/CMakeFiles/aquila_test.dir/transform/Fft.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/transform/Fft.cpp.o: tests/transform/Fft.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_28)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_28)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/transform/Fft.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/Fft.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Fft.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/Fft.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Fft.cpp
 
 tests/CMakeFiles/aquila_test.dir/transform/Fft.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/transform/Fft.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Fft.cpp > CMakeFiles/aquila_test.dir/transform/Fft.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Fft.cpp > CMakeFiles/aquila_test.dir/transform/Fft.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/transform/Fft.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/transform/Fft.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Fft.cpp -o CMakeFiles/aquila_test.dir/transform/Fft.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Fft.cpp -o CMakeFiles/aquila_test.dir/transform/Fft.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/transform/Fft.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/transform/Fft.cpp.o.requires
@@ -695,17 +695,17 @@ tests/CMakeFiles/aquila_test.dir/transform/Fft.cpp.o.provides.build: tests/CMake
 
 tests/CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.o: tests/transform/Mfcc.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_29)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_29)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Mfcc.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Mfcc.cpp
 
 tests/CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Mfcc.cpp > CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Mfcc.cpp > CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Mfcc.cpp -o CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Mfcc.cpp -o CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.o.requires
@@ -718,17 +718,17 @@ tests/CMakeFiles/aquila_test.dir/transform/Mfcc.cpp.o.provides.build: tests/CMak
 
 tests/CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.o: tests/transform/OouraFft.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_30)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_30)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/OouraFft.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/transform/OouraFft.cpp
 
 tests/CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/OouraFft.cpp > CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/transform/OouraFft.cpp > CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/OouraFft.cpp -o CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/transform/OouraFft.cpp -o CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.o.requires
@@ -741,17 +741,17 @@ tests/CMakeFiles/aquila_test.dir/transform/OouraFft.cpp.o.provides.build: tests/
 
 tests/CMakeFiles/aquila_test.dir/transform/Dct.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/transform/Dct.cpp.o: tests/transform/Dct.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_31)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_31)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/transform/Dct.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/Dct.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Dct.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/Dct.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Dct.cpp
 
 tests/CMakeFiles/aquila_test.dir/transform/Dct.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/transform/Dct.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Dct.cpp > CMakeFiles/aquila_test.dir/transform/Dct.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Dct.cpp > CMakeFiles/aquila_test.dir/transform/Dct.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/transform/Dct.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/transform/Dct.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Dct.cpp -o CMakeFiles/aquila_test.dir/transform/Dct.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Dct.cpp -o CMakeFiles/aquila_test.dir/transform/Dct.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/transform/Dct.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/transform/Dct.cpp.o.requires
@@ -764,17 +764,17 @@ tests/CMakeFiles/aquila_test.dir/transform/Dct.cpp.o.provides.build: tests/CMake
 
 tests/CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.o: tests/CMakeFiles/aquila_test.dir/flags.make
 tests/CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.o: tests/transform/Spectrogram.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_32)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_32)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object tests/CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.o"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Spectrogram.cpp
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Spectrogram.cpp
 
 tests/CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.i"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Spectrogram.cpp > CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.i
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Spectrogram.cpp > CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.i
 
 tests/CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.s"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/transform/Spectrogram.cpp -o CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.s
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/tests/transform/Spectrogram.cpp -o CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.s
 
 tests/CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.o.requires:
 .PHONY : tests/CMakeFiles/aquila_test.dir/transform/Spectrogram.cpp.o.requires
@@ -861,7 +861,7 @@ tests/aquila_test: lib/unittestpp/libUnitTest++.a
 tests/aquila_test: lib/libOoura_fft.a
 tests/aquila_test: tests/CMakeFiles/aquila_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable aquila_test"
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/aquila_test.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/aquila_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tests/CMakeFiles/aquila_test.dir/build: tests/aquila_test
@@ -902,10 +902,10 @@ tests/CMakeFiles/aquila_test.dir/requires: tests/CMakeFiles/aquila_test.dir/tran
 .PHONY : tests/CMakeFiles/aquila_test.dir/requires
 
 tests/CMakeFiles/aquila_test.dir/clean:
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/tests && $(CMAKE_COMMAND) -P CMakeFiles/aquila_test.dir/cmake_clean.cmake
+	cd /home/elchaschab/devel/sndcut/third/aquila/tests && $(CMAKE_COMMAND) -P CMakeFiles/aquila_test.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/aquila_test.dir/clean
 
 tests/CMakeFiles/aquila_test.dir/depend:
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/elchaschab/devel/sndcut-1.0/third/aquila /home/elchaschab/devel/sndcut-1.0/third/aquila/tests /home/elchaschab/devel/sndcut-1.0/third/aquila /home/elchaschab/devel/sndcut-1.0/third/aquila/tests /home/elchaschab/devel/sndcut-1.0/third/aquila/tests/CMakeFiles/aquila_test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/elchaschab/devel/sndcut/third/aquila && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/elchaschab/devel/sndcut/third/aquila /home/elchaschab/devel/sndcut/third/aquila/tests /home/elchaschab/devel/sndcut/third/aquila /home/elchaschab/devel/sndcut/third/aquila/tests /home/elchaschab/devel/sndcut/third/aquila/tests/CMakeFiles/aquila_test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tests/CMakeFiles/aquila_test.dir/depend
 

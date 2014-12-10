@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/elchaschab/devel/sndcut-1.0/third/aquila
+CMAKE_SOURCE_DIR = /home/elchaschab/devel/sndcut/third/aquila
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/elchaschab/devel/sndcut-1.0/third/aquila
+CMAKE_BINARY_DIR = /home/elchaschab/devel/sndcut/third/aquila
 
 # Utility rule file for uninstall.
 
@@ -46,7 +46,7 @@ CMAKE_BINARY_DIR = /home/elchaschab/devel/sndcut-1.0/third/aquila
 include CMakeFiles/uninstall.dir/progress.make
 
 CMakeFiles/uninstall:
-	/usr/bin/cmake -P /home/elchaschab/devel/sndcut-1.0/third/aquila/uninstall.cmake
+	/usr/bin/cmake -P /home/elchaschab/devel/sndcut/third/aquila/uninstall.cmake
 
 uninstall: CMakeFiles/uninstall
 uninstall: CMakeFiles/uninstall.dir/build.make
@@ -61,6 +61,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/elchaschab/devel/sndcut-1.0/third/aquila /home/elchaschab/devel/sndcut-1.0/third/aquila /home/elchaschab/devel/sndcut-1.0/third/aquila /home/elchaschab/devel/sndcut-1.0/third/aquila /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/elchaschab/devel/sndcut/third/aquila && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/elchaschab/devel/sndcut/third/aquila /home/elchaschab/devel/sndcut/third/aquila /home/elchaschab/devel/sndcut/third/aquila /home/elchaschab/devel/sndcut/third/aquila /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

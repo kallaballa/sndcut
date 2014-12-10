@@ -1,4 +1,4 @@
-# Install script for directory: /home/elchaschab/devel/sndcut-1.0/third/aquila/tests
+# Install script for directory: /home/elchaschab/devel/sndcut/third/aquila/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

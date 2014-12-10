@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/elchaschab/devel/sndcut-1.0/third/aquila/lib/ooura/fft4g.c
+/home/elchaschab/devel/sndcut/third/aquila/lib/ooura/fft4g.c
 math.h
 -
 

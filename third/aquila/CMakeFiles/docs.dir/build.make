@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/elchaschab/devel/sndcut-1.0/third/aquila
+CMAKE_SOURCE_DIR = /home/elchaschab/devel/sndcut/third/aquila
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/elchaschab/devel/sndcut-1.0/third/aquila
+CMAKE_BINARY_DIR = /home/elchaschab/devel/sndcut/third/aquila
 
 # Utility rule file for docs.
 
@@ -46,7 +46,7 @@ CMAKE_BINARY_DIR = /home/elchaschab/devel/sndcut-1.0/third/aquila
 include CMakeFiles/docs.dir/progress.make
 
 CMakeFiles/docs:
-	/usr/bin/doxygen /home/elchaschab/devel/sndcut-1.0/third/aquila/Doxyfile
+	/usr/bin/doxygen /home/elchaschab/devel/sndcut/third/aquila/Doxyfile
 
 docs: CMakeFiles/docs
 docs: CMakeFiles/docs.dir/build.make
@@ -61,6 +61,6 @@ CMakeFiles/docs.dir/clean:
 .PHONY : CMakeFiles/docs.dir/clean
 
 CMakeFiles/docs.dir/depend:
-	cd /home/elchaschab/devel/sndcut-1.0/third/aquila && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/elchaschab/devel/sndcut-1.0/third/aquila /home/elchaschab/devel/sndcut-1.0/third/aquila /home/elchaschab/devel/sndcut-1.0/third/aquila /home/elchaschab/devel/sndcut-1.0/third/aquila /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles/docs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/elchaschab/devel/sndcut/third/aquila && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/elchaschab/devel/sndcut/third/aquila /home/elchaschab/devel/sndcut/third/aquila /home/elchaschab/devel/sndcut/third/aquila /home/elchaschab/devel/sndcut/third/aquila /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles/docs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/docs.dir/depend
 

@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/elchaschab/devel/sndcut-1.0/third/aquila/tests
-# Build directory: /home/elchaschab/devel/sndcut-1.0/third/aquila/tests
+# Source directory: /home/elchaschab/devel/sndcut/third/aquila/tests
+# Build directory: /home/elchaschab/devel/sndcut/third/aquila/tests
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

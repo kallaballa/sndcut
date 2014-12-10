@@ -1,4 +1,4 @@
-# Install script for directory: /home/elchaschab/devel/sndcut-1.0/third/aquila/examples/wave_iteration
+# Install script for directory: /home/elchaschab/devel/sndcut/third/aquila/examples/wave_iteration
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

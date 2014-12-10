@@ -1,4 +1,4 @@
-# Install script for directory: /home/elchaschab/devel/sndcut-1.0/third/aquila/lib
+# Install script for directory: /home/elchaschab/devel/sndcut/third/aquila/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/cmake_install.cmake")
+  include("/home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/cmake_install.cmake")
 
 endif()
 
