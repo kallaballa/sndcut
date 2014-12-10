@@ -5,8 +5,8 @@ TARGET := sndcut.html
 endif
 
 SRCS  := sndcut.cpp
-CXXFLAGS += `pkg-config --cflags sndfile samplerate`
-LIBS += `pkg-config --libs sndfile samplerate` -lboost_program_options -lAquila -lOoura_fft
+CXXFLAGS += `pkg-config --cflags sndfile samplerate` -I../third/aquila/
+LIBS += `pkg-config --libs sndfile samplerate`  -lboost_program_options -lAquila -lOoura_fft
 LDFLAGS += -L../third/aquila/ -L../third/aquila/lib
 
 #precompiled headers
