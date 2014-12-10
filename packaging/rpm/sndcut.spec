@@ -25,9 +25,11 @@ URL: https://github.com/kallaballa/sndcut
 Packager: Amir Hassan <amir@viel-zu.org>
 %if %{defined suse_version}
 BuildRequires: gcc-c++ boost-devel libsndfile-devel libsamplerate-devel pkg-config
+PreReq: cmake
 Requires: libboost_program_options1_54_0 libsndfile libsamplerate0
 %else
 BuildRequires: gcc-c++ boost-devel libsndfile-devel libsamplerate-devel pkg-config
+PreReq: cmake
 Requires: boost-program-options libsndfile libsamplerate
 %endif
 Source:       %{name}-%{version}.tar.bz2
@@ -41,6 +43,7 @@ sndcut is a program the generates LP records from audio files - it generates an 
 %setup -q
 
 %build
+./build_deps.sh
 make
 
 %install

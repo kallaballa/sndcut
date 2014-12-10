@@ -24,6 +24,7 @@ endif
 build: build-stamp
 build-stamp:
 	dh_testdir
+	./build_deps.sh
 	make debian-release
 	# --- end custom part for compiling
 
