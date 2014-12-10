@@ -201,9 +201,9 @@ vector<double> inverse_RIAA_filter(vector<double>& source, size_t samplingRate) 
    auto signalFFT = FftFactory::getFft(SIZE);
     SpectrumType signalSpectrum = signalFFT->fft(frame.toArray());
     for (std::size_t i = 0; i < SIZE; ++i) {
-      filterSpectrum[i] = 1.0;
+      filterSpectrum[i] = 1.0 + lookup.entries[3].energy;
 
-      for(size_t j = 0; j < 3; ++j) {
+      for(size_t j = 0; j < 4; ++j) {
         size_t minBin = 0;
         double minEnergy = -1;
         size_t maxBin = (SIZE * lookup.entries[j].hz / sampleFreq);
@@ -222,12 +222,11 @@ vector<double> inverse_RIAA_filter(vector<double>& source, size_t samplingRate) 
         }
       }
     }
-    /*
+/*
     //Plot the filter spectrum
     Aquila::TextPlot plt("Filter Spectrum:");
     plt.plotSpectrum(filterSpectrum);
-     */
-
+*/
     // the following call does the multiplication of two spectra
     // (which is complementary to convolution in time domain)
     std::transform(std::begin(signalSpectrum), std::end(signalSpectrum), std::begin(filterSpectrum), std::begin(signalSpectrum),
