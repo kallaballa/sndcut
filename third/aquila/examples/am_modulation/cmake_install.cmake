@@ -1,4 +1,4 @@
-# Install script for directory: /home/elchaschab/devel/sndcut/third/aquila/examples/am_modulation
+# Install script for directory: /home/elchaschab/devel/sndcut-1.0/third/aquila/examples/am_modulation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

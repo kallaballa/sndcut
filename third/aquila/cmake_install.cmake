@@ -1,4 +1,4 @@
-# Install script for directory: /home/elchaschab/devel/sndcut/third/aquila
+# Install script for directory: /home/elchaschab/devel/sndcut-1.0/third/aquila
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,26 +33,26 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/elchaschab/devel/sndcut/third/aquila/libAquila.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/elchaschab/devel/sndcut-1.0/third/aquila/libAquila.a")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/aquila" TYPE DIRECTORY FILES "/home/elchaschab/devel/sndcut/third/aquila/aquila/" FILES_MATCHING REGEX "/[^/]*\\.h$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/aquila" TYPE DIRECTORY FILES "/home/elchaschab/devel/sndcut-1.0/third/aquila/aquila/" FILES_MATCHING REGEX "/[^/]*\\.h$")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/aquila" TYPE FILE FILES
-    "/home/elchaschab/devel/sndcut/third/aquila/CHANGELOG"
-    "/home/elchaschab/devel/sndcut/third/aquila/LICENSE"
-    "/home/elchaschab/devel/sndcut/third/aquila/README.md"
+    "/home/elchaschab/devel/sndcut-1.0/third/aquila/CHANGELOG"
+    "/home/elchaschab/devel/sndcut-1.0/third/aquila/LICENSE"
+    "/home/elchaschab/devel/sndcut-1.0/third/aquila/README.md"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/elchaschab/devel/sndcut/third/aquila/lib/cmake_install.cmake")
-  include("/home/elchaschab/devel/sndcut/third/aquila/examples/cmake_install.cmake")
-  include("/home/elchaschab/devel/sndcut/third/aquila/tests/cmake_install.cmake")
+  include("/home/elchaschab/devel/sndcut-1.0/third/aquila/lib/cmake_install.cmake")
+  include("/home/elchaschab/devel/sndcut-1.0/third/aquila/examples/cmake_install.cmake")
+  include("/home/elchaschab/devel/sndcut-1.0/third/aquila/tests/cmake_install.cmake")
 
 endif()
 
@@ -62,7 +62,7 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "/home/elchaschab/devel/sndcut/third/aquila/${CMAKE_INSTALL_MANIFEST}" "")
+file(WRITE "/home/elchaschab/devel/sndcut-1.0/third/aquila/${CMAKE_INSTALL_MANIFEST}" "")
 foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "/home/elchaschab/devel/sndcut/third/aquila/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  file(APPEND "/home/elchaschab/devel/sndcut-1.0/third/aquila/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 endforeach()
