@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/elchaschab/devel/sndcut/third/aquila
+CMAKE_SOURCE_DIR = /home/elchaschab/devel/sndcut-1.0/third/aquila
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/elchaschab/devel/sndcut/third/aquila
+CMAKE_BINARY_DIR = /home/elchaschab/devel/sndcut-1.0/third/aquila
 
 # Include any dependencies generated for this target.
 include lib/unittestpp/CMakeFiles/UnitTest++.dir/depend.make
@@ -51,17 +51,17 @@ include lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.o: lib/unittestpp/UnitTest++/ReportAssert.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/ReportAssert.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/ReportAssert.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/ReportAssert.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/ReportAssert.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/ReportAssert.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/ReportAssert.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.o.requires
@@ -74,17 +74,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/ReportAssert.cpp.o.provides.
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.o: lib/unittestpp/UnitTest++/DeferredTestReporter.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/DeferredTestReporter.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/DeferredTestReporter.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/DeferredTestReporter.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/DeferredTestReporter.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/DeferredTestReporter.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/DeferredTestReporter.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.o.requires
@@ -97,17 +97,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestReporter.cpp.o.p
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.o: lib/unittestpp/UnitTest++/TimeConstraint.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TimeConstraint.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TimeConstraint.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TimeConstraint.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TimeConstraint.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TimeConstraint.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TimeConstraint.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.o.requires
@@ -120,17 +120,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TimeConstraint.cpp.o.provide
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.o: lib/unittestpp/UnitTest++/TestDetails.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestDetails.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestDetails.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestDetails.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestDetails.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestDetails.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestDetails.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.o.requires
@@ -143,17 +143,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestDetails.cpp.o.provides.b
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.o: lib/unittestpp/UnitTest++/TestList.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestList.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestList.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestList.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestList.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestList.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestList.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.o.requires
@@ -166,17 +166,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestList.cpp.o.provides.buil
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.o: lib/unittestpp/UnitTest++/Test.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/Test.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/Test.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/Test.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/Test.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/Test.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/Test.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.o.requires
@@ -189,17 +189,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Test.cpp.o.provides.build: l
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.o: lib/unittestpp/UnitTest++/TestResults.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestResults.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestResults.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestResults.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestResults.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestResults.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestResults.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.o.requires
@@ -212,17 +212,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestResults.cpp.o.provides.b
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.o: lib/unittestpp/UnitTest++/TestReporterStdout.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestReporterStdout.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestReporterStdout.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestReporterStdout.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestReporterStdout.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestReporterStdout.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestReporterStdout.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.o.requires
@@ -235,17 +235,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporterStdout.cpp.o.pro
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.o: lib/unittestpp/UnitTest++/DeferredTestResult.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/DeferredTestResult.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/DeferredTestResult.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/DeferredTestResult.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/DeferredTestResult.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/DeferredTestResult.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/DeferredTestResult.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.o.requires
@@ -258,17 +258,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/DeferredTestResult.cpp.o.pro
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.o: lib/unittestpp/UnitTest++/XmlTestReporter.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/XmlTestReporter.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/XmlTestReporter.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/XmlTestReporter.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/XmlTestReporter.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/XmlTestReporter.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/XmlTestReporter.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.o.requires
@@ -281,17 +281,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/XmlTestReporter.cpp.o.provid
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.o: lib/unittestpp/UnitTest++/TestRunner.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestRunner.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestRunner.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestRunner.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestRunner.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestRunner.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestRunner.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.o.requires
@@ -304,17 +304,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestRunner.cpp.o.provides.bu
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.o: lib/unittestpp/UnitTest++/Checks.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/Checks.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/Checks.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/Checks.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/Checks.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/Checks.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/Checks.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.o.requires
@@ -327,17 +327,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Checks.cpp.o.provides.build:
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.o: lib/unittestpp/UnitTest++/AssertException.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/AssertException.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/AssertException.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/AssertException.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/AssertException.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/AssertException.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/AssertException.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.o.requires
@@ -350,17 +350,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/AssertException.cpp.o.provid
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.o: lib/unittestpp/UnitTest++/MemoryOutStream.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/MemoryOutStream.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/MemoryOutStream.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/MemoryOutStream.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/MemoryOutStream.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/MemoryOutStream.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/MemoryOutStream.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.o.requires
@@ -373,17 +373,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/MemoryOutStream.cpp.o.provid
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.o: lib/unittestpp/UnitTest++/TestReporter.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestReporter.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestReporter.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestReporter.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestReporter.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/TestReporter.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/TestReporter.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.o.requires
@@ -396,17 +396,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/TestReporter.cpp.o.provides.
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.o: lib/unittestpp/UnitTest++/CurrentTest.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/CurrentTest.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/CurrentTest.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/CurrentTest.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/CurrentTest.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/CurrentTest.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/CurrentTest.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.o.requires
@@ -419,17 +419,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CurrentTest.cpp.o.provides.b
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.o: lib/unittestpp/UnitTest++/CompositeTestReporter.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/CompositeTestReporter.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/CompositeTestReporter.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/CompositeTestReporter.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/CompositeTestReporter.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/CompositeTestReporter.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/CompositeTestReporter.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.o.requires
@@ -442,17 +442,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/CompositeTestReporter.cpp.o.
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.o: lib/unittestpp/UnitTest++/Posix/SignalTranslator.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/Posix/SignalTranslator.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/Posix/SignalTranslator.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/Posix/SignalTranslator.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/Posix/SignalTranslator.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/Posix/SignalTranslator.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/Posix/SignalTranslator.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.o.requires
@@ -465,17 +465,17 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/SignalTranslator.cpp.o
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.o: lib/unittestpp/CMakeFiles/UnitTest++.dir/flags.make
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.o: lib/unittestpp/UnitTest++/Posix/TimeHelpers.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut/third/aquila/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.o"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.o -c /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/Posix/TimeHelpers.cpp
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.o -c /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/Posix/TimeHelpers.cpp
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.i"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/Posix/TimeHelpers.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.i
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/Posix/TimeHelpers.cpp > CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.i
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.s"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/UnitTest++/Posix/TimeHelpers.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.s
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/UnitTest++/Posix/TimeHelpers.cpp -o CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.s
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.o.requires:
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTest++/Posix/TimeHelpers.cpp.o.requires
@@ -533,8 +533,8 @@ lib/unittestpp/libUnitTest++.a: lib/unittestpp/CMakeFiles/UnitTest++.dir/UnitTes
 lib/unittestpp/libUnitTest++.a: lib/unittestpp/CMakeFiles/UnitTest++.dir/build.make
 lib/unittestpp/libUnitTest++.a: lib/unittestpp/CMakeFiles/UnitTest++.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libUnitTest++.a"
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && $(CMAKE_COMMAND) -P CMakeFiles/UnitTest++.dir/cmake_clean_target.cmake
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UnitTest++.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && $(CMAKE_COMMAND) -P CMakeFiles/UnitTest++.dir/cmake_clean_target.cmake
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UnitTest++.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/unittestpp/CMakeFiles/UnitTest++.dir/build: lib/unittestpp/libUnitTest++.a
@@ -562,10 +562,10 @@ lib/unittestpp/CMakeFiles/UnitTest++.dir/requires: lib/unittestpp/CMakeFiles/Uni
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/requires
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/clean:
-	cd /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp && $(CMAKE_COMMAND) -P CMakeFiles/UnitTest++.dir/cmake_clean.cmake
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp && $(CMAKE_COMMAND) -P CMakeFiles/UnitTest++.dir/cmake_clean.cmake
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/clean
 
 lib/unittestpp/CMakeFiles/UnitTest++.dir/depend:
-	cd /home/elchaschab/devel/sndcut/third/aquila && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/elchaschab/devel/sndcut/third/aquila /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp /home/elchaschab/devel/sndcut/third/aquila /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp /home/elchaschab/devel/sndcut/third/aquila/lib/unittestpp/CMakeFiles/UnitTest++.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/elchaschab/devel/sndcut-1.0/third/aquila && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/elchaschab/devel/sndcut-1.0/third/aquila /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp /home/elchaschab/devel/sndcut-1.0/third/aquila /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp /home/elchaschab/devel/sndcut-1.0/third/aquila/lib/unittestpp/CMakeFiles/UnitTest++.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/unittestpp/CMakeFiles/UnitTest++.dir/depend
 

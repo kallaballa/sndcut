@@ -1,4 +1,4 @@
-# Install script for directory: /home/elchaschab/devel/sndcut/third/aquila/examples/mfcc_calculation
+# Install script for directory: /home/elchaschab/devel/sndcut-1.0/third/aquila/examples/mfcc_calculation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

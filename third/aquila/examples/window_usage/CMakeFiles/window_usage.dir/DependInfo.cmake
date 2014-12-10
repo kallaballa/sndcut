@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/elchaschab/devel/sndcut/third/aquila/examples/window_usage/window_usage.cpp" "/home/elchaschab/devel/sndcut/third/aquila/examples/window_usage/CMakeFiles/window_usage.dir/window_usage.cpp.o"
+  "/home/elchaschab/devel/sndcut-1.0/third/aquila/examples/window_usage/window_usage.cpp" "/home/elchaschab/devel/sndcut-1.0/third/aquila/examples/window_usage/CMakeFiles/window_usage.dir/window_usage.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/elchaschab/devel/sndcut/third/aquila/CMakeFiles/Aquila.dir/DependInfo.cmake"
-  "/home/elchaschab/devel/sndcut/third/aquila/lib/CMakeFiles/Ooura_fft.dir/DependInfo.cmake"
+  "/home/elchaschab/devel/sndcut-1.0/third/aquila/CMakeFiles/Aquila.dir/DependInfo.cmake"
+  "/home/elchaschab/devel/sndcut-1.0/third/aquila/lib/CMakeFiles/Ooura_fft.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
