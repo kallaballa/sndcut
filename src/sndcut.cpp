@@ -4,6 +4,7 @@
 #include <sndfile.hh>
 #include <boost/program_options.hpp>
 #include <boost/format.hpp>
+#include <boost/algorithm/string.hpp>
 #include <samplerate.h>
 #define _USE_MATH_DEFINES
 #include <cmath>
@@ -13,6 +14,7 @@
 #include "aquila/transform/FftFactory.h"
 #include "aquila/source/FramesCollection.h"
 #include "aquila/tools/TextPlot.h"
+
 
 namespace po = boost::program_options;
 
@@ -415,9 +417,15 @@ int main(int argc, char** argv) {
   po::notify(vm);
 
   if (vm.count("help") || audioFile.empty()) {
-    std::cerr << "Usage: sndcut [options] <audioFile>\n";
+    std::cerr << "Usage: sndcut [options] <audioFile>" << std::endl;
     std::cerr << visible;
     return 0;
+  }
+
+  if(boost::iends_with(audioFile, ".mp3")) {
+    std::cerr << "Error: MP3 file format not supported. You might wanna use OGG instead." << std::endl;
+    std::cerr << "See http://www.mega-nerd.com/libsndfile/#Features for a complete list of supported file formats." << std::endl;
+    exit(0);
   }
 
   LP lp = { diameter, innerMargin, outerMargin, centerHoleDiameter, rpm, amplitudeMax, spacing, sampleRate };
