@@ -3,7 +3,7 @@ it's implementation is inspired by https://github.com/mitsuhito/CuttingRecordGen
 
 #Usage
 
-Using sndcut is very simple. To generate a record you simply have to invoke it with an audio file (usually a wav file since**mp3 is not supported**. Have a look [here](http://www.mega-nerd.com/libsndfile/#Features) for supported file types.
+Using sndcut is very simple. To generate a record you simply have to invoke it with an audio file (usually a wav file since **mp3 is not supported**. Have a look [here](http://www.mega-nerd.com/libsndfile/#Features) for supported file types.
 
 The following examples will give you and idea of the basic usage. But you should be aware that you can tweak following parameters:
 
