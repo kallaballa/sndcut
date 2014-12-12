@@ -55,9 +55,11 @@ You'll need to install developement version of following libraries:
 - boost_program_options
 - libsamplerate
 - libsndfile
+- cmake
 
 After you installed the dependencies all you have to do is type
 
+    ./build_deps.sh
     make
 
 Aside from linux it has been reported to build on Mac OS X.
