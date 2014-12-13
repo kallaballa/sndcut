@@ -46,8 +46,10 @@ There are linux packages available for following distributions:
 - OpenSUSE (13.1, 13.2, Factory)
 - Debian 7.0 
 - Ubuntu (14.04, 14.10)
+- Arch
 
 [Download](http://software.opensuse.org/download.html?project=home%3Aelchaschab&package=sndcut)
+[Download Arch Linux](https://aur.archlinux.org/packages/sndcut/)
 
 #Build
 
