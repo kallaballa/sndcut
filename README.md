@@ -49,6 +49,7 @@ There are linux packages available for following distributions:
 - Arch
 
 [Download](http://software.opensuse.org/download.html?project=home%3Aelchaschab&package=sndcut)
+
 [Download Arch Linux](https://aur.archlinux.org/packages/sndcut/)
 
 #Build
