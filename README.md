@@ -1,5 +1,5 @@
 sndcut is a program the generates LP records from audio files - it generates an SVG file that you can laser cut.
-it's implementation is inspired by https://github.com/mitsuhito/CuttingRecordGeneratori but it does some additional things (e.g.: RIAA equalization) to improve sound quality of the records.
+Its implementation is inspired by https://github.com/mitsuhito/CuttingRecordGenerator but it does some additional things (e.g.: RIAA equalization) to improve sound quality of the records.
 
 #Usage
 
@@ -25,16 +25,16 @@ See sndcut -h for advanced usage.
 #Examples
 In this repository included are two pregenerated examples. They both were generated from the same wav file (imperial.wav). Please note that sndcut does automatic resampling of the audio data (default: 8000hz)
 
-Command line used to generated imperial_short.svg: 
+Command line used to generate imperial_short.svg: 
 
     sndcut imperial.wav > imperial_short.svg
 
-Command line used to generated imperial_long.svg:
+Command line used to generate imperial_long.svg:
 
     # a diameter of 300 millimeters
     sndcut -d300 imperial.wav > imperial_long.svg
 
-The material i used is 5mm acrylic. I used a Epilog Legend 36Ext (60W) with following settings:
+The material I used is 5mm acrylic. I used a Epilog Legend 36Ext (60W) with following settings:
 - Green lines - Speed: 12%, Power: 100%
 - Blue lines - Speed: 10%, Power: 3%
 
