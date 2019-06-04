@@ -54,7 +54,7 @@ There are linux packages available for following distributions:
 
 #Build
 
-You'll need to install developement version of following libraries:
+You'll need to install the development version of following libraries:
 - boost_program_options
 - libsamplerate
 - libsndfile
