@@ -396,8 +396,8 @@ int main(int argc, char** argv) {
       ("center,c", po::value<double>(&centerHoleDiameter)->default_value(centerHoleDiameter), "The center hole diameter in mm")
       ("stroke,t", po::value<double>(&svgPathStrokeWidth)->default_value(svgPathStrokeWidth), "The stroke width in the svg file in mm")
       ("dpi,p", po::value<double>(&dpi)->default_value(dpi), "The laser cutter DPI.")
-      ("enable-normalize,n", po::value<bool>(&normalize)->default_value(dpi), "Enable audio normalization")
-      ("enable-riaafilter,f", po::value<bool>(&riaaFilter)->default_value(dpi), "Enable inverse RIAA equalization")
+      ("enable-normalize,n", po::value<bool>(&normalize)->default_value(normalize), "Enable audio normalization")
+      ("enable-riaafilter,f", po::value<bool>(&riaaFilter)->default_value(riaaFilter), "Enable inverse RIAA equalization")
       ("help,h", "Produce help message");
 
   po::options_description hidden("Hidden options");
