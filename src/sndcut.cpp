@@ -298,9 +298,17 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, AudioFiltering&
   r = lpRadiusPT;
   r = r - (lp.outMargin / MM_PER_PT);
 
-  // Calculate starting point
+
+  double length = data.size();
+  double circum = 2.0 * r * (double)M_PI;
+  double arcLength = (circum / 360.0) * a;
+  double newCircum = arcLength * length;
+  r = newCircum / (2.0 * (double)M_PI);
+  lpRadiusPT = r + (lp.outMargin / MM_PER_PT);
+
+	// Calculate starting point
   x = r * cos(theta) + lpRadiusPT;
-  y = r * sin(theta) + lpRadiusPT;
+	y = r * sin(theta) + lpRadiusPT;
   previousX = x;
   previousY = y;
 
@@ -339,31 +347,31 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, AudioFiltering&
 
     i++;
     theta -= aRad;
-    r -= (ampMax + (lp.spacing / MM_PER_PT)) / (lp.rate * (60.0 / lp.rpm));
+    //r -= (ampMax + (lp.spacing / MM_PER_PT)) / (lp.rate * (60.0 / lp.rpm));
   }
 
   // Close groove path
   svg.endPath();
   svg.endLayer();
 
-  //Draw run-out groove
-  svg.startPath(x,y);
-
-  for (double d = 0; d < M_PI * 4; d += M_PI * 2 / lc.dpi_) {
-    x = (r) * cos(theta) + widthPT / 2;
-    y = (r) * sin(theta) + heightPT / 2;
-    svg.writePoint(x,y);
-    theta -= M_PI * 2 / lc.dpi_;
-    r -= 1.0 / lc.dpi_; // Descrease 1pt while this loop
-  }
-  for (double d = 0; d < M_PI * 2; d += M_PI * 2 / lc.dpi_) {
-    x = (r) * cos(theta) + widthPT / 2;
-    y = (r) * sin(theta) + heightPT / 2;
-    svg.writePoint(x,y);
-    theta -= M_PI * 2 / lc.dpi_;
-  }
-
-  svg.endPath();
+//  //Draw run-out groove
+//  svg.startPath(x,y);
+//
+//  for (double d = 0; d < M_PI * 4; d += M_PI * 2 / lc.dpi_) {
+//    x = (r) * cos(theta) + widthPT / 2;
+//    y = (r) * sin(theta) + heightPT / 2;
+//    svg.writePoint(x,y);
+//    theta -= M_PI * 2 / lc.dpi_;
+//    r -= 1.0 / lc.dpi_; // Descrease 1pt while this loop
+//  }
+//  for (double d = 0; d < M_PI * 2; d += M_PI * 2 / lc.dpi_) {
+//    x = (r) * cos(theta) + widthPT / 2;
+//    y = (r) * sin(theta) + heightPT / 2;
+//    svg.writePoint(x,y);
+//    theta -= M_PI * 2 / lc.dpi_;
+//  }
+//
+//  svg.endPath();
 }
 
 int main(int argc, char** argv) {
