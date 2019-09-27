@@ -263,7 +263,7 @@ void normalize(std::vector<double>& data) {
   }
 }
 
-void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, AudioFiltering& af) {
+void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, AudioFiltering& af, const bool& loop) {
   size_t channels = file.channels();
   double sourceSampleRate = file.samplerate();;
 
@@ -282,7 +282,7 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, AudioFiltering&
     normalize(data);
 
   double a = 360.0 / (lp.rate * (60.0 / lp.rpm));
-  double aRad = a * ((double) M_PI / 180.0);
+  double aRad = a * (M_PI / 180.0);
   double r = 0;
   double theta = 0;
   double x = 0;
@@ -298,14 +298,14 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, AudioFiltering&
   r = lpRadiusPT;
   r = r - (lp.outMargin / MM_PER_PT);
 
-
-  double length = data.size();
-  double circum = 2.0 * r * (double)M_PI;
-  double arcLength = (circum / 360.0) * a;
-  double newCircum = arcLength * length;
-  r = newCircum / (2.0 * (double)M_PI);
-  lpRadiusPT = r + (lp.outMargin / MM_PER_PT);
-
+  if (loop) {
+		double length = data.size();
+		double circum = 2.0 * r * M_PI;
+		double arcLength = (circum / 360.0) * a;
+		double newCircum = arcLength * length;
+		r = newCircum / (2.0 * M_PI);
+		lpRadiusPT = r + (lp.outMargin / MM_PER_PT);
+	}
 	// Calculate starting point
   x = r * cos(theta) + lpRadiusPT;
 	y = r * sin(theta) + lpRadiusPT;
@@ -347,31 +347,34 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc, AudioFiltering&
 
     i++;
     theta -= aRad;
-    //r -= (ampMax + (lp.spacing / MM_PER_PT)) / (lp.rate * (60.0 / lp.rpm));
+    if(!loop)
+    	r -= (ampMax + (lp.spacing / MM_PER_PT)) / (lp.rate * (60.0 / lp.rpm));
   }
 
   // Close groove path
   svg.endPath();
   svg.endLayer();
 
-//  //Draw run-out groove
-//  svg.startPath(x,y);
-//
-//  for (double d = 0; d < M_PI * 4; d += M_PI * 2 / lc.dpi_) {
-//    x = (r) * cos(theta) + widthPT / 2;
-//    y = (r) * sin(theta) + heightPT / 2;
-//    svg.writePoint(x,y);
-//    theta -= M_PI * 2 / lc.dpi_;
-//    r -= 1.0 / lc.dpi_; // Descrease 1pt while this loop
-//  }
-//  for (double d = 0; d < M_PI * 2; d += M_PI * 2 / lc.dpi_) {
-//    x = (r) * cos(theta) + widthPT / 2;
-//    y = (r) * sin(theta) + heightPT / 2;
-//    svg.writePoint(x,y);
-//    theta -= M_PI * 2 / lc.dpi_;
-//  }
-//
-//  svg.endPath();
+  if(!loop) {
+		//Draw run-out groove
+		svg.startPath(x,y);
+
+		for (double d = 0; d < M_PI * 4; d += M_PI * 2 / lc.dpi_) {
+			x = (r) * cos(theta) + widthPT / 2;
+			y = (r) * sin(theta) + heightPT / 2;
+			svg.writePoint(x,y);
+			theta -= M_PI * 2 / lc.dpi_;
+			r -= 1.0 / lc.dpi_; // Descrease 1pt while this loop
+		}
+		for (double d = 0; d < M_PI * 2; d += M_PI * 2 / lc.dpi_) {
+			x = (r) * cos(theta) + widthPT / 2;
+			y = (r) * sin(theta) + heightPT / 2;
+			svg.writePoint(x,y);
+			theta -= M_PI * 2 / lc.dpi_;
+		}
+
+		svg.endPath();
+  }
 }
 
 int main(int argc, char** argv) {
@@ -392,6 +395,7 @@ int main(int argc, char** argv) {
   double dpi = 1200;
   bool riaaFilter = true;
   bool normalize = true;
+  bool loop = false;
 
   po::options_description genericDesc("Options");
   genericDesc.add_options()("diameter,d", po::value<double>(&diameter)->default_value(diameter),"The diameter of the record in mm")
@@ -406,6 +410,7 @@ int main(int argc, char** argv) {
       ("dpi,p", po::value<double>(&dpi)->default_value(dpi), "The laser cutter DPI.")
       ("enable-normalize,n", po::value<bool>(&normalize)->default_value(normalize), "Enable audio normalization")
       ("enable-riaafilter,f", po::value<bool>(&riaaFilter)->default_value(riaaFilter), "Enable inverse RIAA equalization")
+      ("loop,l", po::value<bool>(&loop)->default_value(loop), "Create a looping record. The radius will be adjusted to fit the length of the audio")
       ("help,h", "Produce help message");
 
   po::options_description hidden("Hidden options");
@@ -443,7 +448,8 @@ int main(int argc, char** argv) {
   AudioFiltering af = { normalize, riaaFilter };
   SndfileHandle file = SndfileHandle(audioFile);
 
-  run(file, lp, svg, lc, af);
+
+  run(file, lp, svg, lc, af, loop);
 
   return 0;
 }
