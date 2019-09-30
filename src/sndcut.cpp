@@ -523,16 +523,24 @@ int main(int argc, char** argv) {
 
   double diameter = 302;
   double rpm = 33.5;
-  double amplitudeMax = 0.070;
-  double spacing = 0.06;
+  double amplitudeMax = 0.15;
+  double spacing = 0.5;
   double innerMargin = 120.65;
   double outerMargin = 5;
   double centerHoleDiameter = 7.24;
-  double sampleRate = 44100;
+  double sampleRate = 0;
   double svgPathStrokeWidth = 0.025;
   double dpi = 1200;
   bool riaaFilter = true;
   bool normalize = true;
+  bool gcode = false;
+	size_t cutFeedRate = 1100;
+	size_t plungeFeedRate = 1100;
+	double materialDepth = -3.8;
+	double grooveDepth = -0.21;
+	double saveDepth = 1;
+	double materialDepthIncrement = -1;
+	double grooveDepthIncrement = -0.2;
 
   po::options_description genericDesc("Options");
   genericDesc.add_options()("diameter,d", po::value<double>(&diameter)->default_value(diameter),"The diameter of the record in mm")
@@ -547,7 +555,15 @@ int main(int argc, char** argv) {
       ("dpi,p", po::value<double>(&dpi)->default_value(dpi), "The laser cutter DPI.")
       ("enable-normalize,n", po::value<bool>(&normalize)->default_value(normalize), "Enable audio normalization")
       ("enable-riaafilter,f", po::value<bool>(&riaaFilter)->default_value(riaaFilter), "Enable inverse RIAA equalization")
-      ("help,h", "Produce help message");
+      ("gcode,g", po::value<bool>(&gcode)->default_value(gcode), "Output gcode instead of svg")
+      ("gcf", po::value<size_t>(&cutFeedRate)->default_value(cutFeedRate), "Set the gcode cut feed rate")
+      ("gpf", po::value<size_t>(&plungeFeedRate)->default_value(plungeFeedRate), "Set the gcode plunge feed rate")
+      ("gmd", po::value<double>(&materialDepth)->default_value(materialDepth), "Set the gcode material depth")
+      ("ggd", po::value<double>(&grooveDepth)->default_value(grooveDepth), "Set the gcode groove depth")
+      ("gsd", po::value<double>(&saveDepth)->default_value(saveDepth), "Set the gcode save depth")
+      ("gmi", po::value<double>(&materialDepthIncrement)->default_value(materialDepthIncrement), "Set the gcode material depth increment")
+      ("ggi", po::value<double>(&grooveDepthIncrement)->default_value(grooveDepthIncrement), "Set the gcode groove depth increment")
+			("help,h", "Produce help message");
 
   po::options_description hidden("Hidden options");
   hidden.add_options()("audioFile", po::value<string>(&audioFile), "audioFile");
@@ -565,6 +581,11 @@ int main(int argc, char** argv) {
   po::store(po::command_line_parser(argc, argv).options(cmdline_options).positional(p).run(), vm);
   po::notify(vm);
 
+  if(!vm.count("gcode") && (vm.count("gcf") || vm.count("gpf") || vm.count("gmd") ||  vm.count("ggd") ||  vm.count("gsd") ||  vm.count("gmi") ||  vm.count("gdi")))  {
+  	std::cerr << "You used a gcode option without enabling gcode mode." << std::endl;
+  	return -1;
+  }
+
   if (vm.count("help") || audioFile.empty()) {
     std::cerr << "Usage: sndcut [options] <audioFile>" << std::endl;
     std::cerr << visible;
@@ -576,12 +597,16 @@ int main(int argc, char** argv) {
     std::cerr << "See http://www.mega-nerd.com/libsndfile/#Features for a complete list of supported file formats." << std::endl;
     exit(0);
   }
-
   LP lp = { diameter, innerMargin, outerMargin, centerHoleDiameter, rpm, amplitudeMax, spacing, sampleRate };
   LaserCutter lc;
   lc.dpi_ = dpi;
-  Plot* plot = new GCODE(std::cout, 300, 300, -3.8, -0.21, 1, -1, -0.2);
-// SVG svg(std::cout, diameter / MM_PER_PT, diameter/ MM_PER_PT, dpi, svgPathStrokeWidth/ MM_PER_PT);
+  Plot* plot = nullptr;
+
+  if(gcode)
+  	plot = new GCODE(std::cout, cutFeedRate, plungeFeedRate, materialDepth, grooveDepth, saveDepth, materialDepthIncrement, grooveDepthIncrement);
+  else
+  	plot = new SVG(std::cout, diameter / MM_PER_PT, diameter/ MM_PER_PT, dpi, svgPathStrokeWidth/ MM_PER_PT);
+
   AudioFiltering af = { normalize, riaaFilter };
   SndfileHandle file = SndfileHandle(audioFile);
 
