@@ -60,6 +60,7 @@ public:
   virtual void writeCircle(double cx, double cy, double r) {};
   virtual void startLayer() {};
   virtual void endLayer() {};
+  virtual bool endGroove() { return false; };
   virtual void startPath(const double& x, const double& y) {};
   virtual void endPath() {};
   virtual void writePoint(const double& x, const double& y) {};
@@ -115,6 +116,10 @@ public:
     ostream_ << "</g>" << std::endl;
   }
 
+  virtual bool endGroove() {
+  	return false;
+  }
+
   virtual void startPath(const double& x, const double& y) {
     ostream_ << "<path fill='none' stroke='#0000ff' stroke-width='" << strokeWidth_ << "' " << "d='M" << x << "," << y << " L" << x << "," << y << " ";
   }
@@ -137,23 +142,30 @@ private:
 	double saveDepth_;
 	double lastx_;
 	double lasty_;
-	double depthIncrement_;
+	double materialDepthIncrement_;
+	double grooveDepthIncrement_;
+	double grooveRemainder_;
 
 public:
 	GCODE(std::ostream& ostream, size_t cutFeedRate, size_t plungeFeedRate,
 			double materialDepth, double grooveDepth, double saveDepth,
-			double depthIncrement) :
+			double materialDepthIncrement, double grooveDepthIncrement) :
 			Plot(ostream), cutFeedRate_(cutFeedRate), plungeFeedRate_(plungeFeedRate), materialDepth_(
 					materialDepth), grooveDepth_(grooveDepth), saveDepth_(saveDepth), lastx_(
 					std::numeric_limits<double>::min()), lasty_(
 					std::numeric_limits<double>::min()),
-					depthIncrement_(depthIncrement) {
+					materialDepthIncrement_(materialDepthIncrement),
+					grooveDepthIncrement_(grooveDepthIncrement),
+					grooveRemainder_(grooveDepth) {
 		assert(cutFeedRate > 0);
 		assert(plungeFeedRate > 0);
-		assert(depthIncrement < 0);
+		assert(materialDepthIncrement < 0);
 		assert(saveDepth > 0);
 		assert(grooveDepth < 0);
 		assert(materialDepth < 0);
+		assert(materialDepthIncrement < 0);
+		assert(grooveDepthIncrement < 0);
+
 		//set millimeters
 		ostream_ << "G21" << std::endl;
 	}
@@ -175,12 +187,12 @@ public:
 
 
   	//perform the circle incrementally
-  	size_t increments = floor(materialDepth_ / depthIncrement_);
-  	double remainder = materialDepth_ - (depthIncrement_ * increments);
+  	size_t increments = floor(materialDepth_ / materialDepthIncrement_);
+  	double remainder = materialDepth_ - (materialDepthIncrement_ * increments);
 
   	for(size_t i = 0; i < increments; ++i) {
     	//plunge
-    	ostream_ << "G1 F" << plungeFeedRate_ << " Z" << depthIncrement_ * (i + 1) << std::endl;
+    	ostream_ << "G1 F" << plungeFeedRate_ << " Z" << materialDepthIncrement_ * (i + 1) << std::endl;
     	//cut
   		ostream_ << "G2 X" << startx * MM_PER_PT << " Y" << starty * MM_PER_PT << " I" << r * MM_PER_PT << " F" << cutFeedRate_ << std::endl;
   	}
@@ -194,13 +206,26 @@ public:
   }
 
   virtual void startLayer() {
+  	if(std::fabs(grooveRemainder_) < std::fabs(grooveDepthIncrement_))
+  		grooveRemainder_ = 0;
+  	else
+  		grooveRemainder_ += std::fabs(grooveDepthIncrement_);
   }
 
   virtual void endLayer() {
+  }
+
+  virtual bool endGroove() {
+
+
   	//retract to a comfortable height
   	ostream_ << "G0 Z" << 70 << std::endl;
   	//tool change after groove for cutting
   	ostream_ << "T1 M6" << std::endl;
+  	//back to save depth
+  	ostream_ << "G0 Z" << saveDepth_ << std::endl;
+
+  	return std::abs(grooveRemainder_) > 0.0001;
   }
 
   virtual void startPath(const double& x, const double& y) {
@@ -209,7 +234,7 @@ public:
   	//move quickly to start
   	ostream_ << "G0 X" << x * MM_PER_PT << " Y" << y * MM_PER_PT<< std::endl;
   	//plunge
-  	ostream_ << "G1 F" << plungeFeedRate_ << " Z" << grooveDepth_ << std::endl;
+  	ostream_ << "G1 F" << plungeFeedRate_ << " Z" << grooveDepth_ - grooveRemainder_ << std::endl;
   	//set cut feed rate
   	ostream_ << "G1 F" << cutFeedRate_ << std::endl;
   	lastx_ = x;
@@ -422,69 +447,72 @@ void run(SndfileHandle& file, LP& lp, Plot& plot, LaserCutter& lc, AudioFilterin
   previousY = y;
 
 
-  plot.startLayer();
+  do {
+		plot.startLayer();
 
-  // Starting draw groove
-  plot.startPath(x,y);
+		// Starting draw groove
+		plot.startPath(x,y);
 
-  double amp = 0.0;
-  double ampMax = lp.amplitudeMax / MM_PER_PT;
+		double amp = 0.0;
+		double ampMax = lp.amplitudeMax / MM_PER_PT;
 
-  for (double & sample : data) {
-    if (r > lp.centerHoleDiameter + lp.innerMargin) {
-      amp = sample * ampMax;
+		for (double & sample : data) {
+			if (r > lp.centerHoleDiameter + lp.innerMargin) {
+				amp = sample * ampMax;
 
-      x = (r + amp) * cos(theta) + lpRadiusPT;
-      y = (r + amp) * sin(theta) + lpRadiusPT;
+				x = (r + amp) * cos(theta) + lpRadiusPT;
+				y = (r + amp) * sin(theta) + lpRadiusPT;
 
-      // Check the distance between last point and new point for limitation of output dpi
-      if (isGcode || (hypot(previousX - x, previousY - y) >= (((MM_PER_INCH / lc.dpi_) / MM_PER_PT)))) {
-        plot.writePoint(x,y);
-        previousX = x;
-        previousY = y;
-      }
-    } else {
-    	std::cerr << "Record has been clipped!" << std::endl;
-      break;
-    }
+				// Check the distance between last point and new point for limitation of output dpi
+				if (isGcode || (hypot(previousX - x, previousY - y) >= (((MM_PER_INCH / lc.dpi_) / MM_PER_PT)))) {
+					plot.writePoint(x,y);
+					previousX = x;
+					previousY = y;
+				}
+			} else {
+				std::cerr << "Record has been clipped!" << std::endl;
+				break;
+			}
 
-    // Separate <path> tag each 1000 points
-    if (!isGcode && i >= 1000 && i % 1000 == 0) {
-      plot.endPath();
-      plot.startPath(x, y);
-    }
+			// Separate <path> tag each 1000 points
+			if (!isGcode && i >= 1000 && i % 1000 == 0) {
+				plot.endPath();
+				plot.startPath(x, y);
+			}
 
-    i++;
-    theta -= aRad;
-    r -= (ampMax + (lp.spacing / MM_PER_PT)) / (lp.rate * (60.0 / lp.rpm));
-  }
+			i++;
+			theta -= aRad;
+			r -= (ampMax + (lp.spacing / MM_PER_PT)) / (lp.rate * (60.0 / lp.rpm));
+		}
 
-  // Close groove path
-  plot.endPath();
-  plot.endLayer();
+		// Close groove path
+		plot.endPath();
 
 
-  //Draw run-out groove
-  plot.startPath(x,y);
+		//Draw run-out groove
+		plot.startPath(x,y);
 
-  for (double d = 0; d < M_PI * 4; d += M_PI * 2 / lc.dpi_) {
-    x = (r) * cos(theta) + widthPT / 2;
-    y = (r) * sin(theta) + heightPT / 2;
-    plot.writePoint(x,y);
-    theta -= M_PI * 2 / lc.dpi_;
-    r -= 1.0 / lc.dpi_; // Descrease 1pt while this loop
-  }
-  for (double d = 0; d < M_PI * 2; d += M_PI * 2 / lc.dpi_) {
-    x = (r) * cos(theta) + widthPT / 2;
-    y = (r) * sin(theta) + heightPT / 2;
-    plot.writePoint(x,y);
-    theta -= M_PI * 2 / lc.dpi_;
-  }
+		for (double d = 0; d < M_PI * 4; d += M_PI * 2 / lc.dpi_) {
+			x = (r) * cos(theta) + widthPT / 2;
+			y = (r) * sin(theta) + heightPT / 2;
+			plot.writePoint(x,y);
+			theta -= M_PI * 2 / lc.dpi_;
+			r -= 1.0 / lc.dpi_; // Descrease 1pt while this loop
+		}
+		for (double d = 0; d < M_PI * 2; d += M_PI * 2 / lc.dpi_) {
+			x = (r) * cos(theta) + widthPT / 2;
+			y = (r) * sin(theta) + heightPT / 2;
+			plot.writePoint(x,y);
+			theta -= M_PI * 2 / lc.dpi_;
+		}
 
-  plot.endPath();
+		plot.endPath();
 
-  plot.writeCircle(lpRadiusPT, lpRadiusPT, lpRadiusPT);
+		plot.endLayer();
+  } while(plot.endGroove());
+
   plot.writeCircle(lpRadiusPT, lpRadiusPT, (lp.centerHoleDiameter / MM_PER_PT) /2);
+  plot.writeCircle(lpRadiusPT, lpRadiusPT, lpRadiusPT);
 }
 
 int main(int argc, char** argv) {
@@ -552,8 +580,8 @@ int main(int argc, char** argv) {
   LP lp = { diameter, innerMargin, outerMargin, centerHoleDiameter, rpm, amplitudeMax, spacing, sampleRate };
   LaserCutter lc;
   lc.dpi_ = dpi;
-  Plot* plot = new GCODE(std::cout, 300, 300, -3.8, -0.2, 1, -0.4);
-  //SVG svg(std::cout, diameter / MM_PER_PT, diameter/ MM_PER_PT, dpi, svgPathStrokeWidth/ MM_PER_PT);
+  Plot* plot = new GCODE(std::cout, 300, 300, -3.8, -0.45, 1, -1, -0.1);
+// SVG svg(std::cout, diameter / MM_PER_PT, diameter/ MM_PER_PT, dpi, svgPathStrokeWidth/ MM_PER_PT);
   AudioFiltering af = { normalize, riaaFilter };
   SndfileHandle file = SndfileHandle(audioFile);
 
