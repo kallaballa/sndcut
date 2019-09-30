@@ -422,32 +422,32 @@ void run(SndfileHandle& file, LP& lp, Plot& plot, LaserCutter& lc, AudioFilterin
 
   if(af.normalize)
     normalize(data);
-
-  double a = 360.0 / (lp.rate * (60.0 / lp.rpm));
-  double aRad = a * ((double) M_PI / 180.0);
-  double r = 0;
-  double theta = 0;
-  double x = 0;
-  double y = 0;
-  double previousX;
-  double previousY;
-
-  long i = 0;
-
-  double widthPT = lp.diameter / MM_PER_PT;
-  double heightPT = widthPT;
-  double lpRadiusPT = (lp.diameter / 2) / MM_PER_PT;
-  r = lpRadiusPT;
-  r = r - (lp.outMargin / MM_PER_PT);
-
-  // Calculate starting point
-  x = r * cos(theta) + lpRadiusPT;
-  y = r * sin(theta) + lpRadiusPT;
-  previousX = x;
-  previousY = y;
-
+	double widthPT = lp.diameter / MM_PER_PT;
+	double heightPT = widthPT;
+	double lpRadiusPT = (lp.diameter / 2) / MM_PER_PT;
 
   do {
+		double a = 360.0 / (lp.rate * (60.0 / lp.rpm));
+		double aRad = a * ((double) M_PI / 180.0);
+		double r = 0;
+		double theta = 0;
+		double x = 0;
+		double y = 0;
+		double previousX;
+		double previousY;
+
+		long i = 0;
+
+
+		r = lpRadiusPT;
+		r = r - (lp.outMargin / MM_PER_PT);
+
+		// Calculate starting point
+		x = r * cos(theta) + lpRadiusPT;
+		y = r * sin(theta) + lpRadiusPT;
+		previousX = x;
+		previousY = y;
+
 		plot.startLayer();
 
 		// Starting draw groove
@@ -521,13 +521,13 @@ int main(int argc, char** argv) {
    */
   string audioFile;
 
-  double diameter = 304.8;
-  double rpm = 33;
+  double diameter = 302;
+  double rpm = 33.5;
   double amplitudeMax = 0.070;
   double spacing = 0.06;
   double innerMargin = 120.65;
   double outerMargin = 5;
-  double centerHoleDiameter = 7;
+  double centerHoleDiameter = 7.24;
   double sampleRate = 44100;
   double svgPathStrokeWidth = 0.025;
   double dpi = 1200;
@@ -580,7 +580,7 @@ int main(int argc, char** argv) {
   LP lp = { diameter, innerMargin, outerMargin, centerHoleDiameter, rpm, amplitudeMax, spacing, sampleRate };
   LaserCutter lc;
   lc.dpi_ = dpi;
-  Plot* plot = new GCODE(std::cout, 300, 300, -3.8, -0.45, 1, -1, -0.1);
+  Plot* plot = new GCODE(std::cout, 300, 300, -3.8, -0.21, 1, -1, -0.2);
 // SVG svg(std::cout, diameter / MM_PER_PT, diameter/ MM_PER_PT, dpi, svgPathStrokeWidth/ MM_PER_PT);
   AudioFiltering af = { normalize, riaaFilter };
   SndfileHandle file = SndfileHandle(audioFile);
