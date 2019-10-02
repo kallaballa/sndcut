@@ -606,7 +606,8 @@ int main(int argc, char** argv) {
 			"Enable audio normalization")("enable-riaafilter,f",
 			po::value<bool>(&riaaFilter)->default_value(riaaFilter),
 			"Enable inverse RIAA equalization")("gcode,g",
-			"Output gcode instead of svg. PLEASE NOTE: you have to specify all numeric gcode arguments as positive numbers even when convention dictates a negative number (like for depths that go below the target surface)")("gcf",
+			"Output gcode instead of svg. PLEASE NOTE: you have to specify all numeric gcode arguments as positive numbers even when convention dictates a negative number (like for depths that go below the target surface)")
+			("gcf",
 			po::value<size_t>(&cutFeedRate)->default_value(cutFeedRate),
 			"Set the gcode cut feed rate")("gpf",
 			po::value<size_t>(&plungeFeedRate)->default_value(plungeFeedRate),
@@ -642,10 +643,10 @@ int main(int argc, char** argv) {
 			vm);
 	po::notify(vm);
 
-//  if(!vm.count("gcode") && (vm.count("gcf") || vm.count("gpf") || vm.count("gmd") ||  vm.count("ggd") ||  vm.count("gsd") ||  vm.count("gmi") ||  vm.count("gdi")))  {
-//  	std::cerr << "You used a gcode option without enabling gcode mode." << std::endl;
-//  	return -1;
-//  }
+  if((!vm.count("gcode")) && (!vm["gcf"].defaulted() || !vm["gpf"].defaulted()|| !vm["gmd"].defaulted() ||  !vm["ggd"].defaulted() ||  !vm["gsd"].defaulted() || !vm["gmi"].defaulted()))  {
+  	std::cerr << "You used a gcode option without enabling gcode mode." << std::endl;
+  	return -1;
+  }
 
 	if (vm.count("help") || audioFile.empty()) {
 		std::cerr << "Usage: sndcut [options] <audioFile>" << std::endl;
