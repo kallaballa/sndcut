@@ -574,11 +574,11 @@ int main(int argc, char** argv) {
 	bool normalize = true;
 	size_t cutFeedRate = 1100;
 	size_t plungeFeedRate = 1100;
-	double materialDepth = -1.7;
-	double grooveDepth = -0.11;
+	double materialDepth = 1.7;
+	double grooveDepth = 0.11;
 	double saveDepth = 1;
-	double materialDepthIncrement = -1;
-	double grooveDepthIncrement = -0.1;
+	double materialDepthIncrement = 1;
+	double grooveDepthIncrement = 0.1;
 
 	po::options_description genericDesc("Options");
 	genericDesc.add_options()("diameter,d",
@@ -606,7 +606,7 @@ int main(int argc, char** argv) {
 			"Enable audio normalization")("enable-riaafilter,f",
 			po::value<bool>(&riaaFilter)->default_value(riaaFilter),
 			"Enable inverse RIAA equalization")("gcode,g",
-			"Output gcode instead of svg")("gcf",
+			"Output gcode instead of svg. PLEASE NOTE: you have to specify all numeric gcode arguments as positive numbers even when convention dictates a negative number (like for depths that go below the target surface)")("gcf",
 			po::value<size_t>(&cutFeedRate)->default_value(cutFeedRate),
 			"Set the gcode cut feed rate")("gpf",
 			po::value<size_t>(&plungeFeedRate)->default_value(plungeFeedRate),
@@ -670,8 +670,9 @@ int main(int argc, char** argv) {
 	Plot* plot = nullptr;
 
 	if (vm.count("gcode"))
-		plot = new GCODE(std::cout, cutFeedRate, plungeFeedRate, materialDepth,
-				grooveDepth, saveDepth, materialDepthIncrement, grooveDepthIncrement);
+		//Some values are multiplied by -1 because from here on we stick to gcode conventions as far as we know them.
+		plot = new GCODE(std::cout, cutFeedRate, plungeFeedRate, materialDepth * -1,
+				grooveDepth * -1, saveDepth, materialDepthIncrement * -1, grooveDepthIncrement * -1);
 	else
 		plot = new SVG(std::cout, diameter / MM_PER_PT, diameter / MM_PER_PT, dpi,
 				svgPathStrokeWidth / MM_PER_PT);
