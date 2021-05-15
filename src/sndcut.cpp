@@ -57,28 +57,13 @@ public:
 	virtual ~Plot() {
 	}
 
-	virtual void writeCircle(double cx, double cy, double r) {
-	}
-	;
-	virtual void startLayer() {
-	}
-	;
-	virtual void endLayer() {
-	}
-	;
-	virtual bool endGroove() {
-		return false;
-	}
-	;
-	virtual void startPath(const double& x, const double& y) {
-	}
-	;
-	virtual void endPath() {
-	}
-	;
-	virtual void writePoint(const double& x, const double& y) {
-	}
-	;
+	virtual void writeCircle(double cx, double cy, double r) = 0;
+	virtual void startLayer() = 0;
+	virtual void endLayer() = 0;
+	virtual bool endGroove() = 0;
+	virtual void startPath(const double& x, const double& y)  = 0;
+	virtual void endPath()  = 0;
+	virtual void writePoint(const double& x, const double& y)  = 0;
 };
 
 class SVG: public Plot {
