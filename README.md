@@ -1,7 +1,7 @@
 sndcut is a program the generates LP records from audio files - it generates either a SVG file for laser cutting or g-code for a 3-axis cnc mill.
 Its implementation is inspired by https://github.com/mitsuhito/CuttingRecordGenerator but it does some additional things (e.g.: RIAA equalization) to improve sound quality of the records.
 
-#Usage
+# Usage
 
 Using sndcut is very simple. To generate a record you simply have to invoke it with an audio file (usually a wav or ogg file since **mp3 is not supported**. Have a look [here](http://www.mega-nerd.com/libsndfile/#Features) for supported file types.
 
@@ -23,18 +23,25 @@ The following examples will give you and idea of the basic usage. But you should
 
 See sndcut -h for advanced usage.
 
-#Examples
-In this repository included are two pregenerated examples. They both were generated from the same wav file (imperial.wav). Please note that sndcut does automatic resampling of the audio data (default: 8000hz)
+# Examples
+In this repository included are 3 pregenerated examples. All were generated from the same wav file (imperial.wav). Please note that sndcut does automatic resampling of the audio data (default: 8000hz)
 
-Command line used to generate imperial_short.svg: 
+Command line used to generate imperial_short.svg for a laser cutter: 
 
     sndcut imperial.wav > imperial_short.svg
 
-Command line used to generate imperial_long.svg:
+Command line used to generate imperial_long.svg for a laser cutter:
 
     # a diameter of 300 millimeters
     sndcut -d300 imperial.wav > imperial_long.svg
 
+Command line used to generate imperial.nc.gz for a cnc mill:
+
+    # a 2mm milling cutter, a cut rate of 100mm/s, a plunge rate of 100mm/s, a material depth of 4mm, a groove depth of 0.1mm, a save depth of 10mm, a depth increment of 1mm for cutting and a depth increment of 0.1mm for the groove.
+    sndcut -r 44100 -p 10000 -g --gmc 2 --gcf 100 --gpf 100 --gmd 4 --ggd 0.1 --gsd 10 --gmi 1 --ggi 0.1 imperial.wav > imperial.nc
+    gzip imperial.nc
+
+# Laser Cutting
 The material I used is 5mm acrylic. I used a Epilog Legend 36Ext (60W) with following settings:
 - Green lines - Speed: 12%, Power: 100%
 - Blue lines - Speed: 10%, Power: 3%
