@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include <sndfile.hh>
 #include <boost/program_options.hpp>
@@ -25,8 +26,8 @@ using std::vector;
 double MM_PER_PT = 0.3527777;
 double MM_PER_INCH = 25.4;
 
-struct LaserCutter {
-	double dpi_ = 1200;
+struct Machine {
+	double dpi_;
 };
 
 struct LP {
@@ -45,12 +46,32 @@ struct AudioFiltering {
 	bool riaa;
 };
 
-class SVG {
-private:
+class Plot {
+public:
 	std::ostream& ostream_;
+
+	Plot(std::ostream& ostream) :
+			ostream_(ostream) {
+	}
+
+	virtual ~Plot() {
+	}
+
+	virtual void writeCircle(double cx, double cy, double r, bool inner = true) = 0;
+	virtual void startLayer() = 0;
+	virtual void endLayer() = 0;
+	virtual bool endGroove() = 0;
+	virtual void startPath(const double& x, const double& y) = 0;
+	virtual void endPath() = 0;
+	virtual void writePoint(const double& x, const double& y) = 0;
+	virtual uint64_t newPathInterval() = 0;
+};
+
+class SVG: public Plot {
+private:
 	double strokeWidth_;
 
-	void write_svg_start(double width, double height, double resolution) {
+	void write_start(double width, double height, double resolution) {
 		using namespace boost;
 		string version = "1.0";
 		string dtd = "http://tbd/tbd.dtd";
@@ -61,72 +82,232 @@ private:
 						+ "xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" "
 						+ "xmlns:svg=\"http://www.w3.org/2000/svg\" "
 						+ "xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
-						+ "xmlns=\"http://www.w3.org/2000/svg\" " + "width=\"%f\" "
-						+ "height=\"%f\" " + "resolution=\"%f\" " + "version=\"1.1\" "
+						+ "xmlns=\"http://www.w3.org/2000/svg\" "
+						+ "width=\"%f\" " + "height=\"%f\" "
+						+ "resolution=\"%f\" " + "version=\"1.1\" "
 						+ "viewbox=\"0 0 %f %f\" >");
 
-		string metadata = string("<metadata id=\"ccmetadata\">") + "<rdf:RDF>"
-				+ "<cc:Work rdf:about=\"\">" + "<dc:format>image/svg+xml</dc:format>"
-				+ "<dc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" />"
-				+ "<dc:title></dc:title>" + "</cc:Work>" + "</rdf:RDF>" + "</metadata>";
+		string metadata =
+				string("<metadata id=\"ccmetadata\">") + "<rdf:RDF>"
+						+ "<cc:Work rdf:about=\"\">"
+						+ "<dc:format>image/svg+xml</dc:format>"
+						+ "<dc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" />"
+						+ "<dc:title></dc:title>" + "</cc:Work>" + "</rdf:RDF>"
+						+ "</metadata>";
 
-		ostream_ << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>"
+		ostream_
+		<< "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>"
 				<< std::endl;
-		ostream_ << "<!-- Created with sndcut -->" << std::endl;
+		ostream_ << "<!-- Created with https://github.com/kallaballa/sndcut -->" << std::endl;
 		ostream_ << (svgtag % width % height % resolution % width % height)
 				<< std::endl;
 		ostream_ << metadata << std::endl;
 
 	}
 
-	void write_svg_end() {
+	void write_end() {
 		ostream_ << "</svg>" << std::endl;
 	}
 
 public:
 	SVG(std::ostream& ostream, double width, double height, double resolution,
 			double strokeWidth) :
-			ostream_(ostream), strokeWidth_(strokeWidth) {
-		write_svg_start(width, height, resolution);
+			Plot(ostream), strokeWidth_(strokeWidth) {
+		write_start(width, height, resolution);
 	}
 
-	~SVG() {
-		write_svg_end();
+	virtual ~SVG() {
+		write_end();
 	}
 
-	void writeCircle(double cx, double cy, double r) {
+	virtual void writeCircle(double cx, double cy, double r, bool inner) {
 		ostream_ << "<circle fill='none' stroke='#00ff00' stroke-width='"
-				<< strokeWidth_ << "' cx='" << cx << "' cy='" << cy << "' r='" << r
-				<< "'/>" << std::endl;
+				<< strokeWidth_ << "' cx='" << cx << "' cy='" << cy << "' r='"
+				<< r << "'/>" << std::endl;
 	}
 
-	void startLayer() {
+	virtual void startLayer() {
 		ostream_ << "<g>" << std::endl;
 	}
 
-	void endLayer() {
+	virtual void endLayer() {
 		ostream_ << "</g>" << std::endl;
 	}
 
-	void startPath(const double& x, const double& y) {
-		ostream_ << "<path fill='none' stroke='#0000ff' stroke-width='"
-				<< strokeWidth_ << "' " << "d='M" << x << "," << y << " L" << x << ","
-				<< y << " ";
+	virtual bool endGroove() {
+		return false;
 	}
 
-	void startPath(const double& previousX, const double& previousY,
-			const double& x, const double& y) {
+	virtual void startPath(const double& x, const double& y) {
 		ostream_ << "<path fill='none' stroke='#0000ff' stroke-width='"
-				<< strokeWidth_ << "' " << "d='M" << x << "," << y << " L" << x << ","
-				<< y << " ";
+				<< strokeWidth_ << "' " << "d='M" << x << "," << y << " L" << x
+				<< "," << y << " ";
 	}
 
-	void endPath() {
+	virtual void endPath() {
 		ostream_ << "'/>" << std::endl;
 	}
 
-	void writePoint(const double& x, const double& y) {
+	virtual void writePoint(const double& x, const double& y) {
 		ostream_ << x << "," << y << " ";
+	}
+
+	virtual uint64_t newPathInterval() {
+		return 1000;
+	}
+};
+
+class GCODE: public Plot {
+private:
+	size_t cutFeedRate_;
+	size_t plungeFeedRate_;
+	size_t grooveFeedRate_;
+	size_t groovePlungeFeedRate_;
+	double millingCutterDiameter_;
+	double materialDepth_;
+	double grooveDepth_;
+	double saveDepth_;
+	double lastx_;
+	double lasty_;
+	double materialDepthIncrement_;
+	double grooveDepthIncrement_;
+	double grooveRemainder_;
+
+public:
+	GCODE(std::ostream& ostream, size_t cutFeedRate, size_t plungeFeedRate, size_t grooveFeedRate, size_t groovePlungeFeedRate,
+			double millingCutterDiameter, double materialDepth, double grooveDepth, double saveDepth,
+			double materialDepthIncrement, double grooveDepthIncrement) :
+			Plot(ostream),
+			cutFeedRate_(cutFeedRate),
+			plungeFeedRate_(plungeFeedRate),
+			grooveFeedRate_(grooveFeedRate),
+			groovePlungeFeedRate_(groovePlungeFeedRate),
+			millingCutterDiameter_(millingCutterDiameter),
+			materialDepth_(materialDepth),
+			grooveDepth_(grooveDepth),
+			saveDepth_(saveDepth),
+			lastx_(std::numeric_limits<double>::min()),
+			lasty_(std::numeric_limits<double>::min()),
+			materialDepthIncrement_(materialDepthIncrement),
+			grooveDepthIncrement_(grooveDepthIncrement),
+			grooveRemainder_(grooveDepth) {
+		assert(cutFeedRate > 0);
+		assert(plungeFeedRate > 0);
+		assert(millingCutterDiameter > 0);
+		assert(materialDepthIncrement < 0);
+		assert(saveDepth > 0);
+		assert(grooveDepth < 0);
+		assert(materialDepth < 0);
+		assert(materialDepthIncrement < 0);
+		assert(grooveDepthIncrement < 0);
+
+		//set millimeters
+		ostream_ << "G21" << std::endl;
+		// tool cutter compensation off... we do it ourselves
+		ostream_ << "G40" << std::endl;
+
+	}
+
+	virtual ~GCODE() {
+		//stop spindle
+		ostream_ << "M5" << std::endl;
+		//end program
+		ostream_ << "M30" << std::endl;
+	}
+
+	virtual void writeCircle(double cx, double cy, double r, bool inner) {
+		if (inner) {
+			assert(r > millingCutterDiameter_ / 2.0);
+			r -= (millingCutterDiameter_ / 2.0);
+		} else {
+			r += (millingCutterDiameter_ / 2.0);
+		}
+		double startx = cx - r;
+		double starty = cy;
+		//retract
+		ostream_ << "G0 Z" << saveDepth_ << std::endl;
+		//move quickly to start
+		ostream_ << "G0 X" << startx * MM_PER_PT << " Y" << starty * MM_PER_PT
+				<< std::endl;
+
+		//perform the circle incrementally
+		size_t increments = floor(materialDepth_ / materialDepthIncrement_);
+		double remainder = materialDepth_
+				- (materialDepthIncrement_ * increments);
+
+		for (size_t i = 0; i < increments; ++i) {
+			//plunge
+			ostream_ << "G1 F" << plungeFeedRate_ << " Z"
+					<< materialDepthIncrement_ * (i + 1) << std::endl;
+			//cut
+			ostream_ << "G2 X" << startx * MM_PER_PT << " Y"
+					<< starty * MM_PER_PT << " I" << r * MM_PER_PT << " F"
+					<< cutFeedRate_ << std::endl;
+		}
+
+		if (remainder != 0) {
+			//plunge
+			ostream_ << "G1 F" << plungeFeedRate_ << " Z" << materialDepth_
+					<< std::endl;
+			//cut
+			ostream_ << "G2 X" << startx * MM_PER_PT << " Y"
+					<< starty * MM_PER_PT << " I" << r * MM_PER_PT << " F"
+					<< cutFeedRate_ << std::endl;
+		}
+	}
+
+	virtual void startLayer() {
+		if (std::fabs(grooveRemainder_) < std::fabs(grooveDepthIncrement_))
+			grooveRemainder_ = 0;
+		else
+			grooveRemainder_ += std::fabs(grooveDepthIncrement_);
+	}
+
+	virtual void endLayer() {
+	}
+
+	virtual bool endGroove() {
+
+		//retract to a comfortable height
+		ostream_ << "G0 Z" << 70 << std::endl;
+		//tool change after groove for cutting
+		ostream_ << "T1 M6" << std::endl;
+		//back to save depth
+		ostream_ << "G0 Z" << saveDepth_ << std::endl;
+
+		return std::abs(grooveRemainder_) > 0.0001;
+	}
+
+	virtual void startPath(const double& x, const double& y) {
+		//retract
+		ostream_ << "G0 Z" << saveDepth_ << std::endl;
+		//move quickly to start
+		ostream_ << "G0 X" << x * MM_PER_PT << " Y" << y * MM_PER_PT
+				<< std::endl;
+		//plunge
+		ostream_ << "G1 F" << groovePlungeFeedRate_ << " Z"
+				<< grooveDepth_ - grooveRemainder_ << std::endl;
+		//set cut feed rate
+		ostream_ << "G1 F" << grooveFeedRate_ << std::endl;
+		lastx_ = x;
+		lasty_ = y;
+	}
+
+	virtual void endPath() {
+	}
+
+	virtual void writePoint(const double& x, const double& y) {
+		if (lastx_ != x || lasty_ != y) {
+			//engrave a segment of the groove
+			ostream_ << "G1 X" << x * MM_PER_PT << " Y" << y * MM_PER_PT
+					<< std::endl;
+		}
+		lastx_ = x;
+		lasty_ = y;
+	}
+
+	virtual uint64_t newPathInterval() {
+		return 0;
 	}
 };
 
@@ -194,8 +375,9 @@ struct InverseRIAALookup {
 
 	//values taken from http://de.wikipedia.org/wiki/Schneidkennlinie
 	Entry entries[4] = { { 50, pow(10.0, 17.0 / 20.0) / 10 * -1.0 }, { 500, pow(
-			10.0, 3.0 / 20.0) / 10 * -1.0 }, { 1000, pow(10.0, 0.0 / 20.0) / 10 }, {
-			2120, pow(10.0, 3.0 / 20.0) / 10 } };
+			10.0, 3.0 / 20.0) / 10 * -1.0 },
+			{ 1000, pow(10.0, 0.0 / 20.0) / 10 }, { 2120, pow(10.0, 3.0 / 20.0)
+					/ 10 } };
 };
 
 vector<double> inverse_RIAA_filter(vector<double>& source,
@@ -232,12 +414,12 @@ vector<double> inverse_RIAA_filter(vector<double>& source,
 					if (i == 0 || maxBin == 0)
 						filterSpectrum[i] = 0.0;
 					else
-						filterSpectrum[i] =
-								1.0
-										+ (minEnergy
-												+ (fabs(maxEnergy - minEnergy)
-														* ((double) (i - minBin)
-																/ (double) (maxBin - minBin))));
+						filterSpectrum[i] = 1.0
+								+ (minEnergy
+										+ (fabs(maxEnergy - minEnergy)
+												* ((double) (i - minBin)
+														/ (double) (maxBin
+																- minBin))));
 					break;
 				}
 			}
@@ -282,16 +464,15 @@ void normalize(std::vector<double>& data) {
 	}
 }
 
-void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc,
+void run(SndfileHandle& file, LP& lp, Plot& plot, Machine& machine,
 		AudioFiltering& af) {
+	assert(machine.dpi_ > 0);
 	size_t channels = file.channels();
 	double sourceSampleRate = file.samplerate();
-	;
-
 	vector<double> data = read_fully(file, channels);
 	if (lp.rate != 0 && lp.rate != sourceSampleRate) {
-		std::cerr << "resampling from: " << sourceSampleRate << "hz to: " << lp.rate
-				<< "hz" << std::endl;
+		std::cerr << "resampling from: " << sourceSampleRate << "hz to: "
+				<< lp.rate << "hz" << std::endl;
 		data = resample(data, sourceSampleRate, lp.rate);
 	} else {
 		lp.rate = sourceSampleRate;
@@ -302,92 +483,98 @@ void run(SndfileHandle& file, LP& lp, SVG& svg, LaserCutter& lc,
 
 	if (af.normalize)
 		normalize(data);
-
-	double a = 360.0 / (lp.rate * (60.0 / lp.rpm));
-	double aRad = a * ((double) M_PI / 180.0);
-	double r = 0;
-	double theta = 0;
-	double x = 0;
-	double y = 0;
-	double previousX;
-	double previousY;
-
-	long i = 0;
-
 	double widthPT = lp.diameter / MM_PER_PT;
 	double heightPT = widthPT;
 	double lpRadiusPT = (lp.diameter / 2) / MM_PER_PT;
-	r = lpRadiusPT;
-	r = r - (lp.outMargin / MM_PER_PT);
 
-	// Calculate starting point
-	x = r * cos(theta) + lpRadiusPT;
-	y = r * sin(theta) + lpRadiusPT;
-	previousX = x;
-	previousY = y;
+	do {
+		double a = 360.0 / (lp.rate * (60.0 / lp.rpm));
+		double aRad = a * ((double) M_PI / 180.0);
+		double r = 0;
+		double theta = 0;
+		double x = 0;
+		double y = 0;
+		double previousX;
+		double previousY;
 
-	svg.writeCircle(lpRadiusPT, lpRadiusPT, lpRadiusPT);
-	svg.writeCircle(lpRadiusPT, lpRadiusPT,
-			(lp.centerHoleDiameter / MM_PER_PT) / 2);
-	svg.startLayer();
+		uint64_t i = 0;
 
-	// Starting draw groove
-	svg.startPath(x, y);
+		r = lpRadiusPT;
+		r = r - (lp.outMargin / MM_PER_PT);
 
-	double amp = 0.0;
-	double ampMax = lp.amplitudeMax / MM_PER_PT;
+		// Calculate starting point
+		x = r * cos(theta) + lpRadiusPT;
+		y = r * sin(theta) + lpRadiusPT;
+		previousX = x;
+		previousY = y;
 
-	for (double & sample : data) {
-		if (r > lp.centerHoleDiameter + lp.innerMargin) {
-			amp = sample * ampMax;
+		plot.startLayer();
 
-			x = (r + amp) * cos(theta) + lpRadiusPT;
-			y = (r + amp) * sin(theta) + lpRadiusPT;
+		// Starting draw groove
+		plot.startPath(x, y);
 
-			// Check the distance between last point and new point for limitation of output dpi
-			if (hypot(previousX - x, previousY - y)
-					>= (((MM_PER_INCH / lc.dpi_) / MM_PER_PT))) {
-				svg.writePoint(x, y);
-				previousX = x;
-				previousY = y;
+		double amp = 0.0;
+		double ampMax = lp.amplitudeMax / MM_PER_PT;
+
+		for (double & sample : data) {
+			if (r > (lp.innerMargin / 2)) {
+				amp = sample * ampMax;
+
+				x = (r + amp) * cos(theta) + lpRadiusPT;
+				y = (r + amp) * sin(theta) + lpRadiusPT;
+
+				// Check the distance between last point and new point for limitation of output dpi
+				if ((hypot(previousX - x, previousY - y) >= (((MM_PER_INCH / machine.dpi_) / MM_PER_PT)))) {
+					plot.writePoint(x, y);
+					previousX = x;
+					previousY = y;
+				}
+			} else {
+				std::cerr << "Record has been clipped!" << std::endl;
+				break;
 			}
-		} else {
-			break;
+
+			uint64_t npi = plot.newPathInterval();
+			// Separate <path> tag each 'npi' points
+			if (npi > 0 && i >= npi && i % npi == 0) {
+				plot.endPath();
+				plot.startPath(x, y);
+			}
+
+			i++;
+			theta -= aRad;
+			r -= (ampMax + (lp.spacing / MM_PER_PT))
+					/ (lp.rate * (60.0 / lp.rpm));
 		}
 
-		// Separate <path> tag each 1000 points
-		if (i >= 1000 && i % 1000 == 0) {
-			svg.endPath();
-			svg.startPath(previousX, previousY, x, y);
+		// Close groove path
+		plot.endPath();
+
+		//Draw run-out groove
+		plot.startPath(x, y);
+
+		for (double d = 0; d < M_PI * 4; d += M_PI * 2 / machine.dpi_) {
+			x = (r) * cos(theta) + widthPT / 2;
+			y = (r) * sin(theta) + heightPT / 2;
+			plot.writePoint(x, y);
+			theta -= M_PI * 2 / machine.dpi_;
+			r -= 1.0 / machine.dpi_; // Descrease 1pt while this loop
+		}
+		for (double d = 0; d < M_PI * 2; d += M_PI * 2 / machine.dpi_) {
+			x = (r) * cos(theta) + widthPT / 2;
+			y = (r) * sin(theta) + heightPT / 2;
+			plot.writePoint(x, y);
+			theta -= M_PI * 2 / machine.dpi_;
 		}
 
-		i++;
-		theta -= aRad;
-		r -= (ampMax + (lp.spacing / MM_PER_PT)) / (lp.rate * (60.0 / lp.rpm));
-	}
+		plot.endPath();
 
-	// Close groove path
-	svg.endPath();
-	svg.endLayer();
+		plot.endLayer();
+	} while (plot.endGroove());
 
-	//Draw run-out groove
-	svg.startPath(x, y);
-
-	for (double d = 0; d < M_PI * 4; d += M_PI * 2 / lc.dpi_) {
-		x = (r) * cos(theta) + widthPT / 2;
-		y = (r) * sin(theta) + heightPT / 2;
-		svg.writePoint(x, y);
-		theta -= M_PI * 2 / lc.dpi_;
-		r -= 1.0 / lc.dpi_; // Descrease 1pt while this loop
-	}
-	for (double d = 0; d < M_PI * 2; d += M_PI * 2 / lc.dpi_) {
-		x = (r) * cos(theta) + widthPT / 2;
-		y = (r) * sin(theta) + heightPT / 2;
-		svg.writePoint(x, y);
-		theta -= M_PI * 2 / lc.dpi_;
-	}
-
-	svg.endPath();
+	plot.writeCircle(lpRadiusPT, lpRadiusPT,
+			(lp.centerHoleDiameter / MM_PER_PT) / 2, true);
+	plot.writeCircle(lpRadiusPT, lpRadiusPT, lpRadiusPT, false);
 }
 
 int main(int argc, char** argv) {
@@ -396,48 +583,59 @@ int main(int argc, char** argv) {
 	 */
 	string audioFile;
 
-	double diameter = 150;
-	double rpm = 78;
+	double diameter = 302;
+	double rpm = 33.5;
 	double amplitudeMax = 0.15;
-	double spacing = 0.7;
-	double innerMargin = 100;
+	double spacing = 0.5;
+	double innerMargin = 120.65;
 	double outerMargin = 5;
-	double centerHoleDiameter = 7;
-	double sampleRate = 8000;
+	double centerHoleDiameter = 7.24;
+	double sampleRate = 0;
 	double svgPathStrokeWidth = 0.025;
 	double dpi = 1200;
 	bool riaaFilter = true;
 	bool normalize = true;
+	size_t cutFeedRate = 1100;
+	size_t grooveCutFeedRate = 5;
+	size_t groovePlungeFeedRate = 5;
+	size_t plungeFeedRate = 1100;
+	double millingCutterDiameter = 1;
+	double materialDepth = 1.7;
+	double grooveDepth = 0.11;
+	double saveDepth = 10;
+	double materialDepthIncrement = 1;
+	double grooveDepthIncrement = 0.1;
 
 	po::options_description genericDesc("Options");
-	genericDesc.add_options()("diameter,d",
-			po::value<double>(&diameter)->default_value(diameter),
-			"The diameter of the record in mm")("rate,r",
-			po::value<double>(&sampleRate)->default_value(sampleRate),
-			"The sampe rate in Hz of the resulting record. Automatic resampling will be done if it differs from the input file sample rate. Setting this parameter to zero will adopt the sample rate of the input file.")(
-			"rpm,m", po::value<double>(&rpm)->default_value(rpm),
-			"Target RPM of the record")("amplitude,a",
-			po::value<double>(&amplitudeMax)->default_value(amplitudeMax),
-			"The maximum amplitude in mm")("spacing,s",
-			po::value<double>(&spacing)->default_value(spacing),
-			"The space in between lines in mm")("inner,i",
-			po::value<double>(&innerMargin)->default_value(innerMargin),
-			"The inner margin of the record in mm")("outer,o",
-			po::value<double>(&outerMargin)->default_value(outerMargin),
-			"The outer margin of the record in mm")("center,c",
-			po::value<double>(&centerHoleDiameter)->default_value(centerHoleDiameter),
-			"The center hole diameter in mm")("stroke,t",
-			po::value<double>(&svgPathStrokeWidth)->default_value(svgPathStrokeWidth),
-			"The stroke width in the svg file in mm")("dpi,p",
-			po::value<double>(&dpi)->default_value(dpi), "The laser cutter DPI.")(
-			"enable-normalize,n",
-			po::value<bool>(&normalize)->default_value(normalize),
-			"Enable audio normalization")("enable-riaafilter,f",
-			po::value<bool>(&riaaFilter)->default_value(riaaFilter),
-			"Enable inverse RIAA equalization")("help,h", "Produce help message");
+	genericDesc.add_options()
+			("diameter,d", po::value<double>(&diameter)->default_value(diameter), "The diameter of the record in mm")
+			("rate,r", po::value<double>(&sampleRate)->default_value(sampleRate), "The sampe rate in Hz of the resulting record. Automatic resampling will be done if it differs from the input file sample rate. Setting this parameter to zero will adopt the sample rate of the input file.")
+			("rpm,m", po::value<double>(&rpm)->default_value(rpm), "Target RPM of the record")
+			("amplitude,a", po::value<double>(&amplitudeMax)->default_value(amplitudeMax), "The maximum amplitude in mm")
+			("spacing,s", po::value<double>(&spacing)->default_value(spacing), "The space in between lines in mm")
+			("inner,i", po::value<double>(&innerMargin)->default_value(innerMargin), "The inner margin of the record in mm")
+			("outer,o", po::value<double>(&outerMargin)->default_value(outerMargin), "The outer margin of the record in mm")
+			("center,c", po::value<double>(&centerHoleDiameter)->default_value(centerHoleDiameter), "The center hole diameter in mm")
+			("stroke,t",po::value<double>(&svgPathStrokeWidth)->default_value(svgPathStrokeWidth),"The stroke width in the svg file in mm")
+			("dpi,p",po::value<double>(&dpi)->default_value(dpi),"The machine DPI which is used to limit the detail in the record. ")
+			("enable-normalize,n",po::value<bool>(&normalize)->default_value(normalize),"Enable audio normalization")
+			("enable-riaafilter,f",po::value<bool>(&riaaFilter)->default_value(riaaFilter),"Enable inverse RIAA equalization")
+			("gcode,g","Output gcode instead of svg. PLEASE NOTE: you have to specify all numeric gcode arguments as positive numbers even when convention dictates a negative number (like for depths that go below the target surface)")
+			("gmc", po::value<double>(&millingCutterDiameter)->default_value(millingCutterDiameter), "Set the diameter of the milling cutter (not the drag knife!)")
+			("gcf", po::value<size_t>(&cutFeedRate)->default_value(cutFeedRate), "Set the gcode cut feed rate")
+			("gpf",po::value<size_t>(&plungeFeedRate)->default_value(plungeFeedRate),"Set the gcode plunge feed rate")
+			("ggc", po::value<size_t>(&grooveCutFeedRate)->default_value(grooveCutFeedRate), "Set the gcode cut feed rate for the groove")
+			("ggp",po::value<size_t>(&groovePlungeFeedRate)->default_value(groovePlungeFeedRate),"Set the gcode plunge feed rate for the groove")
+			("gmd",po::value<double>(&materialDepth)->default_value(materialDepth),"Set the gcode material depth")
+			("ggd",po::value<double>(&grooveDepth)->default_value(grooveDepth),"Set the gcode groove depth")
+			("gsd",po::value<double>(&saveDepth)->default_value(saveDepth),"Set the gcode save depth")
+			("gmi",po::value<double>(&materialDepthIncrement)->default_value(materialDepthIncrement),"Set the gcode material depth increment")
+			("ggi",po::value<double>(&grooveDepthIncrement)->default_value(grooveDepthIncrement),"Set the gcode groove depth increment")
+			("help,h","Produce help message");
 
 	po::options_description hidden("Hidden options");
-	hidden.add_options()("audioFile", po::value<string>(&audioFile), "audioFile");
+	hidden.add_options()("audioFile", po::value<string>(&audioFile),
+			"audioFile");
 
 	po::options_description cmdline_options;
 	cmdline_options.add(genericDesc).add(hidden);
@@ -450,9 +648,18 @@ int main(int argc, char** argv) {
 
 	po::variables_map vm;
 	po::store(
-			po::command_line_parser(argc, argv).options(cmdline_options).positional(p).run(),
-			vm);
+			po::command_line_parser(argc, argv).options(cmdline_options).positional(
+					p).run(), vm);
 	po::notify(vm);
+
+	if ((!vm.count("gcode"))
+			&& (!vm["gcf"].defaulted() || !vm["gpf"].defaulted()
+					|| !vm["gmd"].defaulted() || !vm["ggd"].defaulted()
+					|| !vm["gsd"].defaulted() || !vm["gmi"].defaulted())) {
+		std::cerr << "You used a gcode option without enabling gcode mode."
+				<< std::endl;
+		return -1;
+	}
 
 	if (vm.count("help") || audioFile.empty()) {
 		std::cerr << "Usage: sndcut [options] <audioFile>" << std::endl;
@@ -462,24 +669,33 @@ int main(int argc, char** argv) {
 
 	if (boost::iends_with(audioFile, ".mp3")) {
 		std::cerr
-				<< "Error: MP3 file format not supported. You might wanna use OGG instead."
+		<< "Error: MP3 file format not supported. You might want to use OGG instead."
 				<< std::endl;
 		std::cerr
-				<< "See http://www.mega-nerd.com/libsndfile/#Features for a complete list of supported file formats."
+		<< "See http://www.mega-nerd.com/libsndfile/#Features for a complete list of supported file formats."
 				<< std::endl;
 		exit(0);
 	}
 
 	LP lp = { diameter, innerMargin, outerMargin, centerHoleDiameter, rpm,
 			amplitudeMax, spacing, sampleRate };
-	LaserCutter lc;
-	lc.dpi_ = dpi;
-	SVG svg(std::cout, diameter / MM_PER_PT, diameter / MM_PER_PT, dpi,
-			svgPathStrokeWidth / MM_PER_PT);
+	Machine machine = { dpi };
+	Plot* plot = nullptr;
+
+	if (vm.count("gcode"))
+		//Some values are multiplied by -1 because from here on we stick to gcode conventions as far as we know them.
+		plot = new GCODE(std::cout, cutFeedRate, plungeFeedRate, grooveCutFeedRate, groovePlungeFeedRate, millingCutterDiameter,
+				materialDepth * -1, grooveDepth * -1, saveDepth,
+				materialDepthIncrement * -1, grooveDepthIncrement * -1);
+	else
+		plot = new SVG(std::cout, diameter / MM_PER_PT, diameter / MM_PER_PT,
+				dpi, svgPathStrokeWidth / MM_PER_PT);
+
 	AudioFiltering af = { normalize, riaaFilter };
 	SndfileHandle file = SndfileHandle(audioFile);
 
-	run(file, lp, svg, lc, af);
+	run(file, lp, *plot, machine, af);
+	delete plot;
 
 	return 0;
 }
