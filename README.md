@@ -1,4 +1,4 @@
-sndcut is a program the generates LP records from audio files - it generates an SVG file that you can laser cut.
+sndcut is a program the generates LP records from audio files - it generates either a SVG file for laser cutting or g-code for a 3-axis cnc mill.
 Its implementation is inspired by https://github.com/mitsuhito/CuttingRecordGenerator but it does some additional things (e.g.: RIAA equalization) to improve sound quality of the records.
 
 #Usage
@@ -19,6 +19,7 @@ The following examples will give you and idea of the basic usage. But you should
 - The DPI of the laser cutter
 - RIAA equalization
 - Audio normalization
+- **Tons of options for g-code generation**
 
 See sndcut -h for advanced usage.
 
