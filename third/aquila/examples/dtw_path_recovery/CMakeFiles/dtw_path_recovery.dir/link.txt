@@ -1,1 +1,0 @@
-/usr/bin/c++    -std=gnu++0x    CMakeFiles/dtw_path_recovery.dir/dtw_path_recovery.cpp.o  -o dtw_path_recovery -rdynamic ../../libAquila.a ../../lib/libOoura_fft.a 

@@ -1,1 +1,0 @@
-/usr/bin/c++    -std=gnu++0x    CMakeFiles/wave_info.dir/wave_info.cpp.o  -o wave_info -rdynamic ../../libAquila.a ../../lib/libOoura_fft.a 

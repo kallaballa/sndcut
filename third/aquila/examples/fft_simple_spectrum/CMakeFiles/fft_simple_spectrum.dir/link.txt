@@ -1,1 +1,0 @@
-/usr/bin/c++    -std=gnu++0x    CMakeFiles/fft_simple_spectrum.dir/fft_simple_spectrum.cpp.o  -o fft_simple_spectrum -rdynamic ../../libAquila.a ../../lib/libOoura_fft.a 

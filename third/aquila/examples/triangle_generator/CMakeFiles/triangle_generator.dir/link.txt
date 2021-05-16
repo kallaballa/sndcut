@@ -1,1 +1,0 @@
-/usr/bin/c++    -std=gnu++0x    CMakeFiles/triangle_generator.dir/triangle_generator.cpp.o  -o triangle_generator -rdynamic ../../libAquila.a ../../lib/libOoura_fft.a 

@@ -1,2 +1,0 @@
-/usr/bin/ar cr libOoura_fft.a  CMakeFiles/Ooura_fft.dir/ooura/fft4g.c.o
-/usr/bin/ranlib libOoura_fft.a
