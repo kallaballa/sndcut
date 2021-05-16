@@ -96,7 +96,7 @@ private:
 						+ "</metadata>";
 
 		ostream_
-				<< "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>"
+		<< "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>"
 				<< std::endl;
 		ostream_ << "<!-- Created with https://github.com/kallaballa/sndcut -->" << std::endl;
 		ostream_ << (svgtag % width % height % resolution % width % height)
@@ -161,6 +161,8 @@ class GCODE: public Plot {
 private:
 	size_t cutFeedRate_;
 	size_t plungeFeedRate_;
+	size_t grooveFeedRate_;
+	size_t groovePlungeFeedRate_;
 	double millingCutterDiameter_;
 	double materialDepth_;
 	double grooveDepth_;
@@ -172,16 +174,23 @@ private:
 	double grooveRemainder_;
 
 public:
-	GCODE(std::ostream& ostream, size_t cutFeedRate, size_t plungeFeedRate,
+	GCODE(std::ostream& ostream, size_t cutFeedRate, size_t plungeFeedRate, size_t grooveFeedRate, size_t groovePlungeFeedRate,
 			double millingCutterDiameter, double materialDepth, double grooveDepth, double saveDepth,
 			double materialDepthIncrement, double grooveDepthIncrement) :
-			Plot(ostream), cutFeedRate_(cutFeedRate), plungeFeedRate_(
-					plungeFeedRate), millingCutterDiameter_(millingCutterDiameter), materialDepth_(materialDepth), grooveDepth_(
-					grooveDepth), saveDepth_(saveDepth), lastx_(
-					std::numeric_limits<double>::min()), lasty_(
-					std::numeric_limits<double>::min()), materialDepthIncrement_(
-					materialDepthIncrement), grooveDepthIncrement_(
-					grooveDepthIncrement), grooveRemainder_(grooveDepth) {
+			Plot(ostream),
+			cutFeedRate_(cutFeedRate),
+			plungeFeedRate_(plungeFeedRate),
+			grooveFeedRate_(grooveFeedRate),
+			groovePlungeFeedRate_(groovePlungeFeedRate),
+			millingCutterDiameter_(millingCutterDiameter),
+			materialDepth_(materialDepth),
+			grooveDepth_(grooveDepth),
+			saveDepth_(saveDepth),
+			lastx_(std::numeric_limits<double>::min()),
+			lasty_(std::numeric_limits<double>::min()),
+			materialDepthIncrement_(materialDepthIncrement),
+			grooveDepthIncrement_(grooveDepthIncrement),
+			grooveRemainder_(grooveDepth) {
 		assert(cutFeedRate > 0);
 		assert(plungeFeedRate > 0);
 		assert(millingCutterDiameter > 0);
@@ -207,7 +216,7 @@ public:
 	}
 
 	virtual void writeCircle(double cx, double cy, double r, bool inner) {
-		if(inner) {
+		if (inner) {
 			assert(r > millingCutterDiameter_ / 2.0);
 			r -= (millingCutterDiameter_ / 2.0);
 		} else {
@@ -276,10 +285,10 @@ public:
 		ostream_ << "G0 X" << x * MM_PER_PT << " Y" << y * MM_PER_PT
 				<< std::endl;
 		//plunge
-		ostream_ << "G1 F" << plungeFeedRate_ << " Z"
+		ostream_ << "G1 F" << groovePlungeFeedRate_ << " Z"
 				<< grooveDepth_ - grooveRemainder_ << std::endl;
 		//set cut feed rate
-		ostream_ << "G1 F" << cutFeedRate_ << std::endl;
+		ostream_ << "G1 F" << grooveFeedRate_ << std::endl;
 		lastx_ = x;
 		lasty_ = y;
 	}
@@ -457,6 +466,7 @@ void normalize(std::vector<double>& data) {
 
 void run(SndfileHandle& file, LP& lp, Plot& plot, Machine& machine,
 		AudioFiltering& af) {
+	assert(machine.dpi_ > 0);
 	size_t channels = file.channels();
 	double sourceSampleRate = file.samplerate();
 	vector<double> data = read_fully(file, channels);
@@ -514,7 +524,7 @@ void run(SndfileHandle& file, LP& lp, Plot& plot, Machine& machine,
 				y = (r + amp) * sin(theta) + lpRadiusPT;
 
 				// Check the distance between last point and new point for limitation of output dpi
-				if (machine.dpi_ == 0 || (hypot(previousX - x, previousY - y) >= (((MM_PER_INCH / machine.dpi_) / MM_PER_PT)))) {
+				if ((hypot(previousX - x, previousY - y) >= (((MM_PER_INCH / machine.dpi_) / MM_PER_PT)))) {
 					plot.writePoint(x, y);
 					previousX = x;
 					previousY = y;
@@ -523,7 +533,6 @@ void run(SndfileHandle& file, LP& lp, Plot& plot, Machine& machine,
 				std::cerr << "Record has been clipped!" << std::endl;
 				break;
 			}
-
 
 			uint64_t npi = plot.newPathInterval();
 			// Separate <path> tag each 'npi' points
@@ -587,61 +596,42 @@ int main(int argc, char** argv) {
 	bool riaaFilter = true;
 	bool normalize = true;
 	size_t cutFeedRate = 1100;
+	size_t grooveCutFeedRate = 5;
+	size_t groovePlungeFeedRate = 5;
 	size_t plungeFeedRate = 1100;
 	double millingCutterDiameter = 1;
 	double materialDepth = 1.7;
 	double grooveDepth = 0.11;
-	double saveDepth = 1;
+	double saveDepth = 10;
 	double materialDepthIncrement = 1;
 	double grooveDepthIncrement = 0.1;
 
 	po::options_description genericDesc("Options");
-	genericDesc.add_options()("diameter,d",
-			po::value<double>(&diameter)->default_value(diameter),
-			"The diameter of the record in mm")("rate,r",
-			po::value<double>(&sampleRate)->default_value(sampleRate),
-			"The sampe rate in Hz of the resulting record. Automatic resampling will be done if it differs from the input file sample rate. Setting this parameter to zero will adopt the sample rate of the input file.")(
-			"rpm,m", po::value<double>(&rpm)->default_value(rpm),
-			"Target RPM of the record")("amplitude,a",
-			po::value<double>(&amplitudeMax)->default_value(amplitudeMax),
-			"The maximum amplitude in mm")("spacing,s",
-			po::value<double>(&spacing)->default_value(spacing),
-			"The space in between lines in mm")("inner,i",
-			po::value<double>(&innerMargin)->default_value(innerMargin),
-			"The inner margin of the record in mm")("outer,o",
-			po::value<double>(&outerMargin)->default_value(outerMargin),
-			"The outer margin of the record in mm")("center,c",
-			po::value<double>(&centerHoleDiameter)->default_value(
-					centerHoleDiameter), "The center hole diameter in mm")(
-			"stroke,t",
-			po::value<double>(&svgPathStrokeWidth)->default_value(
-					svgPathStrokeWidth),
-			"The stroke width in the svg file in mm")("dpi,p",
-			po::value<double>(&dpi)->default_value(dpi),
-			"The machine DPI which is used to limit the detail in the record. Set it to 0 to disable limiting. ")("enable-normalize,n",
-			po::value<bool>(&normalize)->default_value(normalize),
-			"Enable audio normalization")("enable-riaafilter,f",
-			po::value<bool>(&riaaFilter)->default_value(riaaFilter),
-			"Enable inverse RIAA equalization")("gcode,g",
-			"Output gcode instead of svg. PLEASE NOTE: you have to specify all numeric gcode arguments as positive numbers even when convention dictates a negative number (like for depths that go below the target surface)")
+	genericDesc.add_options()
+			("diameter,d", po::value<double>(&diameter)->default_value(diameter), "The diameter of the record in mm")
+			("rate,r", po::value<double>(&sampleRate)->default_value(sampleRate), "The sampe rate in Hz of the resulting record. Automatic resampling will be done if it differs from the input file sample rate. Setting this parameter to zero will adopt the sample rate of the input file.")
+			("rpm,m", po::value<double>(&rpm)->default_value(rpm), "Target RPM of the record")
+			("amplitude,a", po::value<double>(&amplitudeMax)->default_value(amplitudeMax), "The maximum amplitude in mm")
+			("spacing,s", po::value<double>(&spacing)->default_value(spacing), "The space in between lines in mm")
+			("inner,i", po::value<double>(&innerMargin)->default_value(innerMargin), "The inner margin of the record in mm")
+			("outer,o", po::value<double>(&outerMargin)->default_value(outerMargin), "The outer margin of the record in mm")
+			("center,c", po::value<double>(&centerHoleDiameter)->default_value(centerHoleDiameter), "The center hole diameter in mm")
+			("stroke,t",po::value<double>(&svgPathStrokeWidth)->default_value(svgPathStrokeWidth),"The stroke width in the svg file in mm")
+			("dpi,p",po::value<double>(&dpi)->default_value(dpi),"The machine DPI which is used to limit the detail in the record. ")
+			("enable-normalize,n",po::value<bool>(&normalize)->default_value(normalize),"Enable audio normalization")
+			("enable-riaafilter,f",po::value<bool>(&riaaFilter)->default_value(riaaFilter),"Enable inverse RIAA equalization")
+			("gcode,g","Output gcode instead of svg. PLEASE NOTE: you have to specify all numeric gcode arguments as positive numbers even when convention dictates a negative number (like for depths that go below the target surface)")
 			("gmc", po::value<double>(&millingCutterDiameter)->default_value(millingCutterDiameter), "Set the diameter of the milling cutter (not the drag knife!)")
 			("gcf", po::value<size_t>(&cutFeedRate)->default_value(cutFeedRate), "Set the gcode cut feed rate")
-			("gpf",
-			po::value<size_t>(&plungeFeedRate)->default_value(plungeFeedRate),
-			"Set the gcode plunge feed rate")("gmd",
-			po::value<double>(&materialDepth)->default_value(materialDepth),
-			"Set the gcode material depth")("ggd",
-			po::value<double>(&grooveDepth)->default_value(grooveDepth),
-			"Set the gcode groove depth")("gsd",
-			po::value<double>(&saveDepth)->default_value(saveDepth),
-			"Set the gcode save depth")("gmi",
-			po::value<double>(&materialDepthIncrement)->default_value(
-					materialDepthIncrement),
-			"Set the gcode material depth increment")("ggi",
-			po::value<double>(&grooveDepthIncrement)->default_value(
-					grooveDepthIncrement),
-			"Set the gcode groove depth increment")("help,h",
-			"Produce help message");
+			("gpf",po::value<size_t>(&plungeFeedRate)->default_value(plungeFeedRate),"Set the gcode plunge feed rate")
+			("ggc", po::value<size_t>(&grooveCutFeedRate)->default_value(grooveCutFeedRate), "Set the gcode cut feed rate for the groove")
+			("ggp",po::value<size_t>(&groovePlungeFeedRate)->default_value(groovePlungeFeedRate),"Set the gcode plunge feed rate for the groove")
+			("gmd",po::value<double>(&materialDepth)->default_value(materialDepth),"Set the gcode material depth")
+			("ggd",po::value<double>(&grooveDepth)->default_value(grooveDepth),"Set the gcode groove depth")
+			("gsd",po::value<double>(&saveDepth)->default_value(saveDepth),"Set the gcode save depth")
+			("gmi",po::value<double>(&materialDepthIncrement)->default_value(materialDepthIncrement),"Set the gcode material depth increment")
+			("ggi",po::value<double>(&grooveDepthIncrement)->default_value(grooveDepthIncrement),"Set the gcode groove depth increment")
+			("help,h","Produce help message");
 
 	po::options_description hidden("Hidden options");
 	hidden.add_options()("audioFile", po::value<string>(&audioFile),
@@ -679,10 +669,10 @@ int main(int argc, char** argv) {
 
 	if (boost::iends_with(audioFile, ".mp3")) {
 		std::cerr
-				<< "Error: MP3 file format not supported. You might want to use OGG instead."
+		<< "Error: MP3 file format not supported. You might want to use OGG instead."
 				<< std::endl;
 		std::cerr
-				<< "See http://www.mega-nerd.com/libsndfile/#Features for a complete list of supported file formats."
+		<< "See http://www.mega-nerd.com/libsndfile/#Features for a complete list of supported file formats."
 				<< std::endl;
 		exit(0);
 	}
@@ -694,7 +684,7 @@ int main(int argc, char** argv) {
 
 	if (vm.count("gcode"))
 		//Some values are multiplied by -1 because from here on we stick to gcode conventions as far as we know them.
-		plot = new GCODE(std::cout, cutFeedRate, plungeFeedRate, millingCutterDiameter,
+		plot = new GCODE(std::cout, cutFeedRate, plungeFeedRate, grooveCutFeedRate, groovePlungeFeedRate, millingCutterDiameter,
 				materialDepth * -1, grooveDepth * -1, saveDepth,
 				materialDepthIncrement * -1, grooveDepthIncrement * -1);
 	else
