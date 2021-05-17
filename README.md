@@ -19,7 +19,7 @@ The following examples will give you and idea of the basic usage. But you should
 - The DPI of the laser cutter
 - RIAA equalization
 - Audio normalization
-- **Tons of options for g-code generation**
+- Several options for g-code generation
 
 ```
 Usage: sndcut [options] <audioFile>
