@@ -21,7 +21,53 @@ The following examples will give you and idea of the basic usage. But you should
 - Audio normalization
 - **Tons of options for g-code generation**
 
-See sndcut -h for advanced usage.
+```
+Usage: sndcut [options] <audioFile>
+
+Options:
+  -d [ --diameter ] arg (=302)          The diameter of the record in mm
+  -r [ --rate ] arg (=0)                The sampe rate in Hz of the resulting 
+                                        record. Automatic resampling will be 
+                                        done if it differs from the input file 
+                                        sample rate. Setting this parameter to 
+                                        zero will adopt the sample rate of the 
+                                        input file.
+  -m [ --rpm ] arg (=33.5)              Target RPM of the record
+  -a [ --amplitude ] arg (=0.14999999999999999)
+                                        The maximum amplitude in mm
+  -s [ --spacing ] arg (=0.5)           The space in between lines in mm
+  -i [ --inner ] arg (=120.65000000000001)
+                                        The inner margin of the record in mm
+  -o [ --outer ] arg (=5)               The outer margin of the record in mm
+  -c [ --center ] arg (=7.2400000000000002)
+                                        The center hole diameter in mm
+  -t [ --stroke ] arg (=0.025000000000000001)
+                                        The stroke width in the svg file in mm
+  -p [ --dpi ] arg (=1200)              The machine DPI which is used to limit 
+                                        the detail in the record. 
+  -n [ --enable-normalize ] arg (=1)    Enable audio normalization
+  -f [ --enable-riaafilter ] arg (=1)   Enable inverse RIAA equalization
+  -g [ --gcode ]                        Output gcode instead of svg. PLEASE 
+                                        NOTE: you have to specify all numeric 
+                                        gcode arguments as positive numbers 
+                                        even when convention dictates a 
+                                        negative number (like for depths that 
+                                        go below the target surface)
+  --gmc arg (=1)                        Set the diameter of the milling cutter 
+                                        (not the drag knife!)
+  --gcf arg (=1100)                     Set the gcode cut feed rate
+  --gpf arg (=1100)                     Set the gcode plunge feed rate
+  --ggc arg (=5)                        Set the gcode cut feed rate for the 
+                                        groove
+  --ggp arg (=5)                        Set the gcode plunge feed rate for the 
+                                        groove
+  --gmd arg (=1.7)                      Set the gcode material depth
+  --ggd arg (=0.11)                     Set the gcode groove depth
+  --gsd arg (=10)                       Set the gcode save depth
+  --gmi arg (=1)                        Set the gcode material depth increment
+  --ggi arg (=0.10000000000000001)      Set the gcode groove depth increment
+  -h [ --help ]                         Produce help message
+```
 
 # Examples
 In this repository included are 3 pregenerated examples. All were generated from the same wav file (imperial.wav). Please note that sndcut does automatic resampling of the audio data (default: 8000hz)
