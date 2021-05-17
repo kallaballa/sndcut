@@ -94,7 +94,7 @@ The material I used is 5mm acrylic. I used a Epilog Legend 36Ext (60W) with foll
 
 If you happen to own a Epilog Legend 36Ext laser cutter you can use the ".cut" files included in the examples folder. Those files have all settings done and are ready to laser with [Ctrl-Cut](http://github.com/Metalab/ctrl-cut)
 
-#Packages
+# Packages
 There are linux packages available for following distributions: 
 - Fedora 20
 - OpenSUSE (13.1, 13.2, Factory)
@@ -106,7 +106,7 @@ There are linux packages available for following distributions:
 
 [Download Arch Linux](https://aur.archlinux.org/packages/sndcut/)
 
-#Build
+# Build
 
 You'll need to install the development version of following libraries:
 - boost_program_options
